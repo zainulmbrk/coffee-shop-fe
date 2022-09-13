@@ -38,7 +38,7 @@ const CatProduct = ({ data }) => {
                   <div className={styles.cardPromo}>
                     <div className={styles.mothersDay}>
                       <p className={styles.titleMothersDay}>
-                        HAPPY MOTHER'S DAY!
+                        HAPPY MOTHERS DAY!
                       </p>
                       <p className={styles.contentPromo}>
                         Get one of our favorite
