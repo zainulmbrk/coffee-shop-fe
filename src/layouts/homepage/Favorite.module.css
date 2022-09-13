@@ -1,0 +1,128 @@
+.container{
+    background-color: #eef4f8;
+    width: 100%;
+    font-family: 'Helvetica', sans-serif;
+}
+
+.tagline{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #0B132A;
+}
+
+.tagline p{
+    font-size: 12px;
+    color: #4F5665;
+}
+
+.tagline .titleTagline{
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 2rem;
+}
+
+.content{
+    display: flex;
+    justify-content: space-between;
+    background-color: #eef4f8;
+}
+
+.food1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 3rem 0;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+    color: #0B132A;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    width: 25%;
+    cursor: pointer;
+    transition: 1s ease-out;
+}
+
+.food1 .titleProduct p{
+    font-size: 1rem;
+    font-weight: 600;
+} 
+
+.details p{
+    display: flex;
+    align-items: center;
+}
+
+
+.food1 .order button{
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #FFBA33;
+    color: #FFBA33;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.7s ease-out;
+    font-weight: 600;
+    padding: 0.2rem 1rem;
+}
+
+.food1 .order button:hover{
+    background-color: #FFBA33;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.food1 .details{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-size: 12px;
+}
+.food1 .details p{
+    display: flex;
+    column-gap: 10px;
+}
+
+@media (max-width: 600px) {
+
+    .tagline{
+        text-align: center;
+    }
+
+    .titleTagline p{
+        font-size: 1rem;
+    }
+    .content{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+      .content>* {
+        flex: 0 0 100%;
+    }
+    .food1{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 3rem 0;
+        padding: 1.5rem;
+        font-size: 0.9rem;
+        color: #0B132A;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        width: 25%;
+        cursor: pointer;
+        transition: 1s ease-out;
+        flex-wrap: wrap;
+    }
+
+  
+}
+ 

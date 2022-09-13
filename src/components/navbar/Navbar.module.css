@@ -1,0 +1,190 @@
+.product{
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #fff;
+    /* color: black; */
+    font-family: 'Helvetica', sans-serif;
+    border: 1px solid #9F9F9F;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 1rem 0;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+
+}
+
+.logo p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    color: #0B132A;
+    font-weight: 700;
+    /* margin:auto; */
+}
+
+.nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1.5rem;
+    /* color: #6A4029; */
+    cursor: pointer;
+    
+}
+
+.nav a:hover{
+    color: #6A4029;
+}
+
+.nav a:focus{
+    color: #6A4029;
+    font-weight: bold;
+}
+
+.nav a{
+    text-decoration: none;
+    color: #9F9F9F;
+}
+
+
+
+.auth{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+}
+
+.auth .login{
+    color: #6A4029;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: 700;
+    transition: 1s ease-out;
+    border: 1px solid #fff;
+    padding: 0.3rem 1rem;
+}
+
+.auth .login:hover{
+    
+    background-color: #0B132A;
+    color: #fff;
+}
+
+.auth .signup{
+    background-color: #FFBA33;
+    color: #6A4029;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    padding: 0.3rem 1rem;   
+    transition: 1s ease-out;
+    font-weight: 700;
+    border: 1px solid #FFBA33;
+}
+
+.auth .signup:hover{
+    background-color: #fff;
+    color: #6A4029;
+    
+}
+
+.auth .logout{
+    background-color: transparent;
+    color: #0B132A;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+    font-weight: 700;
+    /* display: inline-flex; */
+    /* justify-content: flex-start; */
+    /* align-items: center; */
+    /* column-gap: 10px; */
+    margin:0;
+    cursor: pointer;
+}
+
+.navRight{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.dropbtn {
+    /* background-color: #4CAF50; */
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    background-image: url('../../../assets/img/profile.png');
+    background-repeat: no-repeat;
+    border-radius: 50px;
+
+  }
+  
+  .dropdown {
+    display: flex;
+    flex-direction: row;
+    
+  }
+  
+  .dropdownContent {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 7rem;
+    top: 5rem;
+    border-radius: 5px;
+  }
+  
+  .dropdownContent a {
+    color: black;
+    padding: 12px 0;
+    text-decoration: none;
+    display: block;
+  }
+  .dropdownContent.active {
+    color: black;
+    padding: 12px 16px;
+    /* text-decoration: none; */
+    display: block;
+  }
+  
+  /* .dropdownContent a:hover {background-color: #f1f1f1}
+  
+  .dropdown:hover .dropdownContent {
+    display: block;
+  }
+   */
+  /* .dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+  }
+ */
+
+@media (max-width: 600px) {
+
+
+    .product{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+    }
+
+    .nav{
+        display: none;
+    }
+
+    .auth{
+        display: none;
+    }
+}

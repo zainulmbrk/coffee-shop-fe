@@ -1,0 +1,45 @@
+.dashboard{
+    font-family: 'Helvetica', sans-serif;
+    margin-bottom: 3rem;
+}
+
+.tHead{
+ text-align: center;
+}
+
+.btnAdd{
+    background-color: #FFBA33;
+    border: 1px solid #FFBA33;
+    color: #6A4029;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 0.3rem 1rem;
+    display: flex;
+
+}
+
+.btnEdit{
+    background-color: #FFBA33;
+    border: 1px solid #FFBA33;
+    color: #6A4029;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 0.5rem;
+    display: flex;
+
+}
+
+.btnDelete{
+    background-color: #FFBA33;
+    border: 1px solid #FFBA33;
+    color: #6A4029;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 0.5rem;
+    display: flex;
+
+}
+

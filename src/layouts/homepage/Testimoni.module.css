@@ -1,0 +1,206 @@
+.testimoniRow {
+    width: 100%;
+    background-color: #eef4f8;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Helvetica', sans-serif;
+}
+
+.testimoni {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1rem;
+}
+
+.cardTestimoni {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 10px;
+    width: 400px;
+    height: 230px;
+    background-color: #fff;
+    margin: 7rem auto;
+
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.header .titleHeader{
+    font-size: 2rem;
+    color: #0B132A;
+    font-weight: 800;
+}
+
+.cardHeader {
+    display: flex;
+    color: #0B132A;
+    margin-top: 2rem;
+}
+
+.picture {
+    display: flex;
+    flex: 1;
+    margin: 0 1rem;
+    width: 50px;
+
+}
+
+.name {
+    display: flex;
+    flex-direction: column;
+    color: #0B132A;
+    height: 50px;
+    flex: 3;
+}
+
+.testimonialName {
+    color: #0B132A;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.address{
+    color: #4F5665;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: -1.2rem;
+}
+
+.rate {
+    display: flex;
+    color: #0B132A;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 1rem;
+}
+
+.rate p{
+    color: #0B132A;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.cardComment {
+    display: flex;
+    color: #0B132A;
+    font-size: 16px;
+    /* justify-content: center; */
+    padding: 1rem;
+}
+
+
+.promoDay {
+    display: flex;
+    background-color: #fff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    height: 150px;
+    border-radius: 10px;
+    color: #0B132A;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+    font-family: 'Helvetica', sans-serif;
+    margin: -4rem 0;
+}
+
+.promoDay:hover{
+    background-color: snow;
+}
+.tagline .checkPromo{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+
+.promoDay p {
+    font-size: 12px;
+    color: #4F5665;
+}
+
+.btnPromo button {
+    width: 8rem;
+    height: 2.5rem;
+    border-radius: 5px;
+    background-color: #FFBA33;
+    font-weight: 700;
+    color: #6A4029;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+}
+
+.btnPromo button:hover {
+    background-color: #fff;
+    border: 1px solid #FFBA33;
+}
+
+@media (max-width: 600px) {
+    .testimoni {
+        display: none;
+        flex-direction: column;
+        margin-bottom: 5rem;
+    }
+
+    .promoDay {
+        display: flex;
+        background-color: #fff;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        width: 70%;
+        height: 100px;
+        border-radius: 10px;
+        color: #0B132A;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: -3rem;
+        margin-left: 0;
+        justify-content: center;
+        position: absolute;
+        padding: 1rem;
+        cursor: pointer;
+        transition: 0.3s ease-out;
+    }
+
+    .promoDay h1 {
+        font-size: 14px;
+        color: #4F5665;
+    }
+    
+    .btnPromo button {
+        width: 8rem;
+        height: 2.5rem;
+        border-radius: 5px;
+        background-color: #FFBA33;
+        font-weight: 700;
+        color: #6A4029;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s ease-out;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
+    .header{
+        display: none;
+    }
+
+    .tagline{
+        display: none;
+    }
+
+    .rowContent{
+        display: flex;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,47 @@
+
+.promoDay {
+    display: flex;
+    background-color: #fff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    height: 150px;
+    border-radius: 10px;
+    color: #0B132A;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+    font-family: 'Helvetica', sans-serif;
+    margin: -3rem 0;
+}
+
+.promoDay:hover{
+    background-color: snow;
+}
+.tagline .checkPromo{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+
+.promoDay p {
+    font-size: 12px;
+    color: #4F5665;
+}
+
+.btnPromo button {
+    width: 8rem;
+    height: 2.5rem;
+    border-radius: 5px;
+    background-color: #FFBA33;
+    font-weight: 700;
+    color: #6A4029;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+}
+
+.btnPromo button:hover {
+    background-color: #fff;
+    border: 1px solid #FFBA33;
+}

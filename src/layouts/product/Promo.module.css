@@ -1,0 +1,145 @@
+.sectionPromo{
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    column-gap: 75px;
+}
+
+.leftContent{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.header{
+    display: flex;
+    flex-direction: column;
+    /* row-gap: 5px; */
+    color: #6A4029;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.header p{
+    font-size: 12px;
+}
+
+.cardPromo{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    
+}
+
+.mothersDay{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 300px;
+    height: 15vh;
+    border-radius: 15px;
+    background-color: #88B788;
+    color: #000;
+    cursor: pointer;
+}
+
+.mothersDay p{
+    font-size: 12px;
+    margin: auto 32px;
+}
+
+.mothersDay h4{
+    margin: auto 32px;
+}
+
+.morningPromo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 300px;
+    height: 15vh;
+    border-radius: 15px;
+    background-color: #F5C361;
+    color: #000;
+    cursor: pointer;
+}
+
+.morningPromo p{
+    font-size: 12px;
+    margin: auto 32px;
+}
+
+.morningPromo h4{
+    margin: auto 32px;
+}
+
+.halloweenPromo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 300px;
+    height: 15vh;
+    border-radius: 15px;
+    background-color: #C59378;
+    color: #000;
+    cursor: pointer;
+}
+
+.halloweenPromo p{
+    font-size: 12px;
+    margin: auto 32px;
+}
+
+.halloweenPromo h4{
+    margin: auto 32px;
+}
+
+.applyCoupon button{
+    width: 300px;
+    height: 10vh;
+    background-color: #6A4029;
+    border-radius: 15px;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 1s ease-out;
+}
+
+.applyCoupon button:hover{
+    background-color: #F5C361;
+}
+
+.termsCondition{
+    display: flex;
+    flex-direction: column;
+    color: #4F5665;
+    margin: 32px 0;
+}
+
+.termsCondition .point p{
+    font-size: 12px;
+}
+
+.vl {
+    border-left: 1px solid #9F9F9F;
+    height: 120vh;
+  }
+
+  @media (max-width: 600px){
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .vl{
+        display: none;
+    }
+
+}

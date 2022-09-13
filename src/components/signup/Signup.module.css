@@ -1,0 +1,185 @@
+.container{
+    display: flex;
+    width: 100%;
+    background-color: #fff;
+    flex-direction: column;
+    font-family: 'Helvetica', sans-serif;
+}
+
+.auth{
+    display: flex;
+}
+
+.leftSide{
+    display: flex;
+    flex: 1;
+}
+
+.rightSide{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    color: #6A4029;
+    flex: 1;
+    margin: 2rem 5rem;
+}
+
+.rightSide .header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.rightSide .logo h4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+}
+
+
+
+/* .login{
+    width: 3rem;
+    height: 32px;
+    background-color: #FFBA33;
+} */
+
+.email{
+    display: flex;
+    flex-direction: column;
+    margin: 16px 0;
+    font-weight: 500;
+    color: #4F5665;
+    margin: 0.5rem 3rem;
+}
+
+.email input{
+    height: 3rem;
+    background-color: #fff;
+    border: 1px solid #4F5665;
+    border-radius: 15px;
+    color: #6A4029;
+    padding: 0 1rem;
+}
+
+.password{
+    display: flex;
+    flex-direction: column;
+    margin: 16px 0;
+    font-weight: 500;
+    color: #4F5665;
+    margin: 0.5rem 3rem;
+}
+
+.password input{
+    height: 3rem;
+    background-color: #fff;
+    border: 1px solid #4F5665;
+    border-radius: 15px;
+    color: #6A4029;
+    padding: 0 1rem;
+}
+
+.phone{
+    display: flex;
+    flex-direction: column;
+    margin: 16px 0;
+    font-weight: 500;
+    color: #4F5665;
+    margin: 0.5rem 3rem;
+}
+
+.phone input{
+    height: 3rem;
+    background-color: #fff;
+    border: 1px solid #4F5665;
+    border-radius: 15px;
+    color: #6A4029;
+    padding: 0 1rem;
+}
+
+.btnSignup{
+    margin: 0.5rem 3rem;
+}
+
+.btnSignup button{
+    width: 100%;
+    height: 3rem;
+    background-color: #FFBA33;
+    border: 1px solid #FFBA33;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #6A4029;
+    font-weight: bold;
+    margin: 16px auto;
+    transition: 0.3s ease-out;
+}
+
+.btnSignup button:hover{
+    background-color: #fff;
+    border: 1px solid #FFBA33;
+}
+
+.btnGoogle{
+    margin: 0.5rem 3rem;
+}
+
+.btnGoogle button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    width: 100%;
+    height: 3rem;
+    background-color: #fff;
+    border: 1px solid #fff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #4F5665;
+    font-weight: bold;
+    
+}
+
+.btnGoogle button:hover{
+    border: 1px solid #4F5665;
+    transition: 0.3s ease-out;
+}
+
+.btnSignin{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem 3rem;
+}
+
+.btnSignin button{
+    width: 100%;
+    height: 3rem;
+    background-color: #6A4029;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    transition: 0.3s ease-out;
+}
+
+.btnSignin button:hover{
+    background-color: #FFBA33;
+    border: 1px solid #fff;
+}
+
+@media (max-width: 600px) {
+
+    .leftSide{
+        display: none;
+    }
+
+
+
+}
