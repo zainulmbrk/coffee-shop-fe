@@ -44,21 +44,21 @@ const Register = () => {
     } else {
       router.push('/signup')
     }
-  }, [isRegister])
+  }, [isRegister, router])
 
   return (
     <>
       <div className={styles.container}>
         <div className={styles.auth}>
           <div className={styles.leftSide}>
-            <Image src={bg} />
+            <Image alt="background" src={bg} />
           </div>
           <div className={styles.rightSide}>
             <form onSubmit={(event) => handleRegister(event)}>
               <div className={styles.header}>
                 <div className={styles.logo}>
                   <h4>
-                    <Image src={logo} /> Coffee Shop
+                    <Image alt="logo" src={logo} /> Coffee Shop
                   </h4>
                 </div>
                 <div className={styles.signup}>
@@ -118,7 +118,7 @@ const Register = () => {
               <div className={styles.btnGoogle}>
                 <button>
                   {' '}
-                  <Image src={google} />
+                  <Image alt="google" src={google} />
                   Sign up with Google
                 </button>
               </div>

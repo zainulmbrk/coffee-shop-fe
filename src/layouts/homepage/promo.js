@@ -10,7 +10,7 @@ const Promo = () => {
               Check our promo
               <br /> today!
             </p>
-            <p>Let's see the deals and pick yours!</p>
+            <p>Lets see the deals and pick yours!</p>
           </div>
           <div className={styles.btnPromo}>
             <button>See Promo</button>

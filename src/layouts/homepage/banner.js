@@ -34,7 +34,7 @@ const Banner = () => {
             <div className={styles.cardInfo}>
               <div className={styles.infoStaff}>
                 <div>
-                  <Image src={staff} />
+                  <Image alt="staff" src={staff} />
                 </div>
                 <div>
                   <h4>90+</h4>
@@ -43,7 +43,7 @@ const Banner = () => {
               </div>
               <div className={styles.infoStore}>
                 <div>
-                  <Image src={location} />
+                  <Image alt="location" src={location} />
                 </div>
                 <div>
                   <h4>30+</h4>
@@ -52,7 +52,7 @@ const Banner = () => {
               </div>
               <div className={styles.infoCustomer}>
                 <div>
-                  <Image src={server} />
+                  <Image alt="server" src={server} />
                 </div>
                 <div>
                   <h4>800+</h4>

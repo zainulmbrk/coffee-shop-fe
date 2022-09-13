@@ -11,7 +11,7 @@ const Content = () => {
             <div className="col-md-6">
               <div className={styles.left}>
                 <div className={styles.teamwork}>
-                  <Image src={pict} width={500} />
+                  <Image alt="pict" src={pict} width={500} />
                 </div>
               </div>
             </div>
@@ -28,19 +28,19 @@ const Content = () => {
                 </div>
                 <div className={styles.ceklist}>
                   <p>
-                    <Image src={ceklist} /> High quality beans
+                    <Image alt="ceklist" src={ceklist} /> High quality beans
                   </p>
                   <p>
-                    <Image src={ceklist} /> Healthy meals, you can request the
-                    ingredients
+                    <Image alt="ceklist" src={ceklist} /> Healthy meals, you can
+                    request the ingredients
                   </p>
                   <p>
-                    <Image src={ceklist} /> Chat with our staff to get better
-                    experience for ordering
+                    <Image alt="ceklist" src={ceklist} /> Chat with our staff to
+                    get better experience for ordering
                   </p>
                   <p>
-                    <Image src={ceklist} /> Free member card with a minimum
-                    purchase of IDR 200.000.
+                    <Image alt="ceklist" src={ceklist} /> Free member card with
+                    a minimum purchase of IDR 200.000.
                   </p>
                 </div>
                 {/* <div className={styles.ceklist2}>

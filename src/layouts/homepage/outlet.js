@@ -20,7 +20,7 @@ const Outlet = () => {
           </p>
         </div>
         <div className="map">
-          <Image src={map} width={1060} height={500} />
+          <Image alt="map" src={map} width={1060} height={500} />
         </div>
       </div>
     </>

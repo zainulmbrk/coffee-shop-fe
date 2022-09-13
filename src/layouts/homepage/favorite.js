@@ -11,7 +11,7 @@ const Favorite = () => {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(GetProduct())
-  }, [])
+  }, [dispatch])
   const data = useSelector((state) => state.product)
   console.log(data.results, 'ini boy')
   return (
@@ -20,9 +20,9 @@ const Favorite = () => {
         <div className="container">
           <div className="row">
             <div className={styles.tagline}>
-              <p className={styles.titleTagline}>Here is People's Favorite</p>
+              <p className={styles.titleTagline}>Here is Peoples Favorite</p>
               <p>
-                Let’s choose and have a bit taste of poeple’s favorite. It might
+                Lets choose and have a bit taste of poeples favorite. It might
                 be yours too!
               </p>
             </div>
@@ -36,6 +36,7 @@ const Favorite = () => {
                           src={`http://localhost:1102/uploads/${item.cover}`}
                           width={100}
                           height={100}
+                          alt="cover"
                           style={{ borderRadius: '50px' }}
                         />
                       </div>

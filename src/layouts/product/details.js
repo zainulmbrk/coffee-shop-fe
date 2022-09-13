@@ -33,6 +33,7 @@ const Details = ({ data }) => {
                     src={`http://localhost:1102/uploads/${results.cover}`}
                     width={200}
                     height={200}
+                    alt="cover"
                     style={{ borderRadius: '100px' }}
                   />
                 </div>
@@ -69,9 +70,9 @@ const Details = ({ data }) => {
                   <div className={styles.bot}>
                     <p>Choose a size</p>
                     <div className={styles.size}>
-                      <Image src={sizeR} width={50} height={50} />
-                      <Image src={sizeL} width={50} height={50} />
-                      <Image src={sizeXL} width={50} height={50} />
+                      <Image alt="size" src={sizeR} width={50} height={50} />
+                      <Image alt="size" src={sizeL} width={50} height={50} />
+                      <Image alt="size" src={sizeXL} width={50} height={50} />
                     </div>
                   </div>
                 </div>
@@ -101,6 +102,7 @@ const Details = ({ data }) => {
                     src={`http://localhost:1102/uploads/${results.cover}`}
                     width={50}
                     height={50}
+                    alt="cover"
                     style={{ borderRadius: '50px' }}
                   />
                   <p>{results.product_name}</p>

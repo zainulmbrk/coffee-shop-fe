@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 import { GetCategory } from '../../redux/actions/Category'
 import Link from 'next/link'
 import styles from './CatProduct.module.css'
+import Image from 'next/image'
 const CatProduct = ({ data }) => {
   const dispatch = useDispatch()
 
@@ -16,7 +17,7 @@ const CatProduct = ({ data }) => {
 
   useEffect(() => {
     dispatch(GetCategory())
-  }, [])
+  }, [dispatch])
   const dataCategory = useSelector((state) => state.category)
   console.log(dataCategory, 'ininiiinini')
   return (
@@ -109,7 +110,8 @@ const CatProduct = ({ data }) => {
                           <div key={item.product_id}>
                             <div className={styles.cardProduct}>
                               <div className="cover">
-                                <img
+                                <Image
+                                  alt="cover"
                                   src={`http://localhost:1102/uploads/${item.cover}`}
                                 />
                               </div>

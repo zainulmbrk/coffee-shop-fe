@@ -29,6 +29,7 @@ const PaymentCustomer = ({ data }) => {
                   src={`http:localhost:1102/uploads/${results.cover}`}
                   width={150}
                   height={150}
+                  alt="cover"
                   style={{ borderRadius: '10px' }}
                 />
                 <h5>{results.product_name}</h5>
@@ -76,7 +77,7 @@ const PaymentCustomer = ({ data }) => {
                       id="myRadioId"
                       className={styles.radioInput}
                     />
-                    <Image src={card} width={20} height={20} />
+                    <Image alt="card" src={card} width={20} height={20} />
                     Card
                   </label>
                   <label htmlFor="myRadioId" className={styles.radio}>
@@ -86,7 +87,7 @@ const PaymentCustomer = ({ data }) => {
                       id="myRadioId"
                       className={styles.radioInput}
                     />
-                    <Image src={bank} width={20} height={20} />
+                    <Image alt="bank" src={bank} width={20} height={20} />
                     Bank account
                   </label>
                   <label htmlFor="myRadioId" className={styles.radio}>
@@ -96,7 +97,7 @@ const PaymentCustomer = ({ data }) => {
                       id="myRadioId"
                       className={styles.radioInput}
                     />
-                    <Image src={cod} width={20} height={20} />
+                    <Image alt="cod" src={cod} width={20} height={20} />
                     Cash on delivery
                   </label>
                 </div>

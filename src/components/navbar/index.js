@@ -18,7 +18,7 @@ const Navbar = () => {
     if (isLogin === false) {
       router.push('/')
     }
-  }, [isLogin])
+  }, [isLogin, router])
 
   const [dropBar, setDropBar] = useState(false)
 
@@ -30,7 +30,8 @@ const Navbar = () => {
             <div className="col-md-2 d-flex align-items-center">
               <div className={styles.logo}>
                 <p>
-                  <Image src={logo} width={25} height={30} /> Coffee Shop
+                  <Image alt="logo" src={logo} width={25} height={30} /> Coffee
+                  Shop
                 </p>
               </div>
             </div>
@@ -63,10 +64,10 @@ const Navbar = () => {
                 {isLogin ? (
                   <div className={styles.navRight}>
                     <div className={styles.search}>
-                      <Image src={search} width={20} height={20} />
+                      <Image alt="search" src={search} width={20} height={20} />
                     </div>
                     <div className={styles.msg}>
-                      <Image src={msg} width={20} height={20} />
+                      <Image alt="message" src={msg} width={20} height={20} />
                     </div>
                     <div className={styles.dropdown}>
                       <button

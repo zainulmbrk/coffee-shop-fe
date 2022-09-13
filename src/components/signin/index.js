@@ -48,7 +48,7 @@ const Login = () => {
     } else {
       router.push('/signin')
     }
-  }, [isLogin])
+  }, [isLogin, router])
 
   //   const handleLogin = (event) => {
   //     event.preventDefault()
@@ -76,7 +76,7 @@ const Login = () => {
       <div className={styles.container}>
         <div className={styles.auth}>
           <div className={styles.leftSide}>
-            <Image src={bg} />
+            <Image alt="backgorund" src={bg} />
           </div>
           <div className={styles.rightSide}>
             <form onSubmit={(event) => handleLogin(event)}>
@@ -84,7 +84,7 @@ const Login = () => {
                 <div className={styles.logo}>
                   <h4>
                     {' '}
-                    <Image src={logo} /> Coffee Shop
+                    <Image alt="logo" src={logo} /> Coffee Shop
                   </h4>
                 </div>
                 <div className={styles.login}>
@@ -129,12 +129,12 @@ const Login = () => {
               <div className={styles.btnGoogle}>
                 <button>
                   {' '}
-                  <Image src={google} />
+                  <Image alt="google" src={google} />
                   Login with Google
                 </button>
               </div>
               <div className={styles.btnSignup}>
-                <h6>Don't have an account?</h6>
+                <h6>Dont have an account?</h6>
                 <Link href="/signup">
                   <button>Sign up here</button>
                 </Link>

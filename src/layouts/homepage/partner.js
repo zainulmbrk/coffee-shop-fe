@@ -17,19 +17,19 @@ const Partner = () => {
             </div>
             <div className={styles.list}>
               <div>
-                <Image src={partner1} width={200} height={200} />
+                <Image alt="partner" src={partner1} width={200} height={200} />
               </div>
               <div>
-                <Image src={partner2} width={200} height={200} />
+                <Image alt="partner" src={partner2} width={200} height={200} />
               </div>
               <div>
-                <Image src={partner3} width={200} height={200} />
+                <Image alt="partner" src={partner3} width={200} height={200} />
               </div>
               <div>
-                <Image src={partner4} width={200} height={200} />
+                <Image alt="partner" src={partner4} width={200} height={200} />
               </div>
               <div>
-                <Image src={partner5} width={200} height={200} />
+                <Image alt="partner" src={partner5} width={200} height={200} />
               </div>
             </div>
           </div>

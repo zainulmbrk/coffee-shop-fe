@@ -17,7 +17,7 @@ const Footer = () => {
                 <div className={styles.title}>
                   <p>
                     {' '}
-                    <Image src={logo} /> Coffee Shop
+                    <Image alt="logo" src={logo} /> Coffee Shop
                   </p>
                   {/* <svg data-testid="CoffeeIcon"></svg> */}
                 </div>
