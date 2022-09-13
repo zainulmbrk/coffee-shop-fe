@@ -273,7 +273,7 @@ const Admin = ({ products }) => {
         <div
           className="modal fade"
           id="addProduct"
-          tabDashboard="-1"
+          // tabDashboard="-1"
           aria-labelledby="addProduct"
           aria-hidden="true"
         >
@@ -402,7 +402,7 @@ const Admin = ({ products }) => {
         <div
           className="modal fade"
           id="editProduct"
-          tabDashboard="-1"
+          // tabDashboard="-1"
           aria-labelledby="editProduct"
           aria-hidden="true"
         >
