@@ -39,7 +39,7 @@ const Admin = ({ products }) => {
     try {
       const results = await axios({
         method: 'POST',
-        url: `http://localhost:1102/api/v1/product`,
+        url: `${process.env.NEXT_PUBLIC_API_URL}/product`,
         data: formData,
         headers: {
           authorization: data.token,
@@ -146,7 +146,7 @@ const Admin = ({ products }) => {
       if (result.isConfirmed) {
         axios({
           method: 'DELETE',
-          url: `http://localhost:1102/api/v1/product/${product_id}`,
+          url: `${process.env.NEXT_PUBLIC_API_URL}/product/${product_id}`,
           headers: {
             authorization: data.token,
           },
@@ -169,7 +169,7 @@ const Admin = ({ products }) => {
     try {
       const results = await axios({
         method: 'PATCH',
-        url: `http://localhost:1102/api/v1/product/${product_id}`,
+        url: `${process.env.NEXT_PUBLIC_API_URL}/product/${product_id}`,
         data: formData,
         headers: {
           authorization: data.token,

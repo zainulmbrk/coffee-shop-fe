@@ -11,7 +11,7 @@ const Home = (props) => {
             <div className="img-preview" key={index}>
               <Image
                 alt="cover"
-                src={`http://localhost:1102/uploads/${item.cover}`}
+                src={`${process.env.NEXT_PUBLIC_API_URL_IMAGE}/uploads/${item.cover}`}
                 width={100}
                 height={100}
               />
@@ -45,7 +45,7 @@ export async function getServerSideProps() {
   try {
     const results = await axios({
       method: 'GET',
-      url: 'http://localhost:1102/api/v1/product',
+      url: `${process.env.NEXT_PUBLIC_API_URL}/product`,
     })
     data = results
   } catch (error) {
