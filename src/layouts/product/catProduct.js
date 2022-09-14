@@ -17,7 +17,7 @@ const CatProduct = ({ data }) => {
 
   useEffect(() => {
     dispatch(GetCategory())
-  }, [dispatch])
+  }, [])
   const dataCategory = useSelector((state) => state.category)
   console.log(dataCategory, 'ininiiinini')
   return (

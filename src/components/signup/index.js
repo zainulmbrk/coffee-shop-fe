@@ -44,7 +44,7 @@ const Register = () => {
     } else {
       router.push('/signup')
     }
-  }, [isRegister, router])
+  }, [isRegister])
 
   return (
     <>

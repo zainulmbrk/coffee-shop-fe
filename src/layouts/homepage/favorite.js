@@ -11,9 +11,9 @@ const Favorite = () => {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(GetProduct())
-  }, [dispatch])
+  }, [])
   const data = useSelector((state) => state.product)
-  console.log(data.results, 'ini boy')
+  // console.log(data.results, 'ini boy')
   return (
     <>
       <div className={styles.container}>

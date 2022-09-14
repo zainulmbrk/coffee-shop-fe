@@ -14,11 +14,11 @@ const Navbar = () => {
   const dispatch = useDispatch()
   const { loading, isLogin, data } = useSelector((state) => state.login)
   const router = useRouter()
-  useEffect(() => {
-    if (isLogin === false) {
-      router.push('/')
-    }
-  }, [isLogin, router])
+  // useEffect(() => {
+  //   if (isLogin === false) {
+  //     router.push('/')
+  //   }
+  // }, [router])
 
   const [dropBar, setDropBar] = useState(false)
 

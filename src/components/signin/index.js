@@ -48,7 +48,7 @@ const Login = () => {
     } else {
       router.push('/signin')
     }
-  }, [isLogin, router])
+  }, [isLogin])
 
   //   const handleLogin = (event) => {
   //     event.preventDefault()
