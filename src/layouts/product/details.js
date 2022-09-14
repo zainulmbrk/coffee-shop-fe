@@ -30,7 +30,7 @@ const Details = ({ data }) => {
               <div className={styles.leftInfo} key={results.product_id}>
                 <div className={styles.coverProduct}>
                   <Image
-                    src={`${process.env.NEXT_PUBLIC_API_URL_IMAGE}/uploads/${results.cover}`}
+                    src={`${process.env.NEXT_PUBLIC_API_URL_IMAGE}/${results.cover}`}
                     width={200}
                     height={200}
                     alt="cover"
@@ -99,7 +99,7 @@ const Details = ({ data }) => {
               <div className={styles.cardCheckout}>
                 <div className={styles.contentCheckout}>
                   <Image
-                    src={`${process.env.NEXT_PUBLIC_API_URL_IMAGE}/uploads/${results.cover}`}
+                    src={`${process.env.NEXT_PUBLIC_API_URL_IMAGE}/${results.cover}`}
                     width={50}
                     height={50}
                     alt="cover"

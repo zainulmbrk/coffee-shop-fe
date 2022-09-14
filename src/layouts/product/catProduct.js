@@ -112,7 +112,7 @@ const CatProduct = ({ data }) => {
                               <div className="cover">
                                 <Image
                                   alt="cover"
-                                  src={`${process.env.NEXT_PUBLIC_API_URL_IMAGE}/uploads/${item.cover}`}
+                                  src={`${process.env.NEXT_PUBLIC_API_URL_IMAGE}/${item.cover}`}
                                 />
                               </div>
                               <div className={styles.name}>
