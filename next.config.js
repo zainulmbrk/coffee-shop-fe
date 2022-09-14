@@ -2,12 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  
-}
-
-
-module.exports = {
   images: {
-    domains: ['localhost'],
+    domains: ['app-coffee-shop.herokuapp.com'],
   },
 }
+module.exports = nextConfig

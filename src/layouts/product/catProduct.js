@@ -112,6 +112,8 @@ const CatProduct = ({ data }) => {
                               <div className="cover">
                                 <Image
                                   alt="cover"
+                                  width={100}
+                                  height={100}
                                   src={`${process.env.NEXT_PUBLIC_API_URL_IMAGE}/${item.cover}`}
                                 />
                               </div>
