@@ -26,7 +26,7 @@ const PaymentCustomer = ({ data }) => {
               {/* return (<> */}
               <div className={styles.item}>
                 <Image
-                  src={`http:localhost:1102/uploads/${results.cover}`}
+                  src={`${process.env.NEXT_PUBLIC_API_URL_IMAGE}/${results.cover}`}
                   width={150}
                   height={150}
                   alt="cover"
