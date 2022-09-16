@@ -8,7 +8,7 @@ class MyDocument extends Document {
           <link rel="icon" href="logo/coffee.svg" alt="coffee" />
 
           <link
-            href="http://fonts.cdnfonts.com/css/helvetica-neue-9"
+            href="https://fonts.cdnfonts.com/css/helvetica-neue-9"
             rel="stylesheet"
           />
         </Head>
