@@ -26,7 +26,6 @@ const Login = () => {
     email: '',
     password: '',
   })
-  //   const [error, setError] = useState('')
 
   const handleLogin = (event) => {
     event.preventDefault()
@@ -49,27 +48,6 @@ const Login = () => {
       router.push('/signin')
     }
   }, [isLogin])
-
-  //   const handleLogin = (event) => {
-  //     event.preventDefault()
-  //     axios({
-  //       method: 'POST',
-  //       url: `http://localhost:1102/api/v1/auth/login`,
-  //     })
-  //       .then((res) => {
-  //         Cookie.set('token', res.data.data.token)
-  //         Cookie.set('user_id', res.data.data.user_id)
-  //         Cookie.set('role', res.data.data.role)
-  //         router.push('home')
-  //       })
-  //       .catch((err) => {
-  //         console.log(err)
-  //       })
-  //   }
-
-  //   const handleChangeText = (event) => {
-  //     setFormLogin({ ...formLogin, [event.target.name]: event.target.value })
-  //   }
 
   return (
     <>
@@ -125,6 +103,7 @@ const Login = () => {
                   <button>Login</button>
                 )}
                 {error && <div>{error.message}</div>}
+                {/* <button>Login</button> */}
               </div>
               <div className={styles.btnGoogle}>
                 <button>

@@ -13,6 +13,7 @@ const Admin = ({ products }) => {
   const [refetch, setRefetch] = useState('')
 
   const { data } = useSelector((state) => state.login)
+  console.log(data, 'cuks')
   const [formAddData, setFormAddData] = useState({})
   const [formEditData, setFormEditData] = useState('')
   // console.log(formEditData, 'editnih')

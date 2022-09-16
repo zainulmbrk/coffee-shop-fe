@@ -4,8 +4,8 @@
     box-sizing: border-box;
     color: #fff;
     background-image: url('../../../assets/img/bg-payment.png');
-    height: 120vh;
-
+    /* height: 120vh; */
+    font-family: 'Helvetica', sans-serif;
 }
 
 .header{
@@ -13,16 +13,18 @@
 }
 
 .wrapProduct{
-    margin-top: -1.6rem;
+    padding: 2rem 0;
     display: flex;
     flex-direction: column;
+
 }
 
 .paymentInfo{
     display: flex;
     color: black;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
+    margin-top: 1rem;
 }
 
 .orderSummary{
@@ -32,14 +34,14 @@
     background-color: #fff;
     border-radius: 10px;
     border: none;
-    padding: 0 20px;
-    row-gap: 20px;
+    padding: 0 1.5rem;
+    /* row-gap: 20px; */
     width: 400px;
     /* height: 537px; */
 }
 
 .titleSummary{
-    margin-top: 24px;
+    margin-top: 1.5rem;
     text-align: center;
 }
 
@@ -53,6 +55,7 @@
 .price{
     display: flex;
     flex-direction: column;
+    font-weight: 600;
 }
 
 .subtotal{
@@ -78,10 +81,14 @@
 .total{
     display: flex;
     justify-content: space-between;
+    font-weight: 800;
+    font-size: 1.5rem;
 }
 
-.address h4{
+.address .titleAddress{
     color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
 .cardAddress{
@@ -93,8 +100,23 @@
     padding: 10px;
 }
 
-.paymentMethod h4{
+.cardAddress .titleDelivery{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.cardAddress .textUser{
+    font-size: 0.9rem;
+}
+
+.cardAddress .phoneUser{
+    font-size: 0.9rem;
+}
+
+.paymentMethod .titlePaymentMethod{
     color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
 .cardPaymentMethod{

@@ -1,10 +1,10 @@
 import CustomerPayment from '../../layouts/payment'
 
-const Payment = ({ data }) => {
+const Payment = ({ paymentcart }) => {
   return (
     <>
       <div className="content">
-        <CustomerPayment data={data} />
+        <CustomerPayment paymentcart={paymentcart} />
       </div>
     </>
   )
@@ -15,6 +15,6 @@ export async function getServerSideProps(context) {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/product/${context.params.id}`,
   )
-  const data = await res.json()
-  return { props: { data } }
+  const paymentcart = await res.json()
+  return { props: { paymentcart } }
 }

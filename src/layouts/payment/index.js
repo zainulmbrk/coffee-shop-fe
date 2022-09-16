@@ -1,12 +1,11 @@
-import PaymentCustomer from "./paymentCustomer"
+import PaymentCustomer from './paymentCustomer'
 
-const CustomerPayment = ({data}) => {
-    return (<>
-
-        <PaymentCustomer data={data} />
-
-
-    </>)
+const CustomerPayment = ({ paymentcart }) => {
+  return (
+    <>
+      <PaymentCustomer paymentcart={paymentcart} />
+    </>
+  )
 }
 
 export default CustomerPayment
