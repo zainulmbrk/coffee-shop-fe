@@ -8,7 +8,6 @@ import axios from 'axios'
 import { useSelector } from 'react-redux'
 const PaymentCustomer = ({ paymentcart }) => {
   const results = paymentcart.data[0]
-  console.log(paymentcart, 'cekout')
 
   const { data } = useSelector((state) => state.login)
   console.log(data, 'tesbro')
