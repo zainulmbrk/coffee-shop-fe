@@ -197,7 +197,7 @@
     justify-content: center;
     align-items: center;
     column-gap: 2rem;  
-
+    margin-bottom: 2rem;
 }
 
 .cardCheckout{
@@ -209,7 +209,7 @@
     align-items: center;
     color: #000;
     padding: 1rem;
-
+    justify-content: center;
 }
 
 .cardCheckout .contentCheckout{
@@ -224,6 +224,8 @@
     font-weight: 1000;
     color: #000;
     text-transform: uppercase;
+    margin: 0;
+    padding: 0;
 }
 
 .btnCheckout button{
@@ -240,4 +242,81 @@
 .btnCheckout button:hover{
     background-color: #6A4029;
     color: #fff;
+}
+
+@media (max-width: 600px){
+    .checkoutInfo{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin-bottom: 2rem;
+        row-gap: 2rem;
+        /* background-color: blue; */
+    }
+
+    .rightInfo{
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+        margin: 0 1rem;
+    }
+
+    .checkoutAction{
+        display: flex;
+        flex-direction: row;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 2rem;  
+        margin-bottom: 2rem;
+    }
+
+    .cardCheckout{
+        background-color: #fff;
+        width: 100%;
+        border-radius: 10px;
+        display: flex;
+        column-gap: 10px;
+        align-items: center;
+        color: #000;
+        padding: 0.5rem;
+        justify-content: center;
+    }
+    
+    .cardCheckout .contentCheckout{
+        display: flex;
+        align-items: center;
+        column-gap: 24px;
+        margin-left: 24px;
+    }
+    
+    .cardCheckout .contentCheckout p{
+        font-size: 1rem;
+        font-weight: 1000;
+        color: #000;
+        text-transform: uppercase;
+        margin: 0;
+        padding: 0;
+    }
+
+    .btnCheckout{
+        width: 100%;
+    }
+    
+    .btnCheckout button{
+        background-color: #FFBA33;
+        border: none;
+        color: #6A4029;
+        font-weight: bold;
+        padding: 1rem;
+        width: 100%;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 1s ease-out;   
+    }
+    
+    .btnCheckout button:hover{
+        background-color: #6A4029;
+        color: #fff;
+    }
 }

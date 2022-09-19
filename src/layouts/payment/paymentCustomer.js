@@ -1,38 +1,62 @@
 import styles from './Payment.module.css'
 import Image from 'next/image'
-import pict from '../../../assets/img/coffee1.png'
 import card from '../../../assets/img/card.png'
 import bank from '../../../assets/img/bank.png'
 import cod from '../../../assets/img/cod.png'
+import Swal from 'sweetalert2'
 import axios from 'axios'
 import { useSelector } from 'react-redux'
+import { useState } from 'react'
+
 const PaymentCustomer = ({ paymentcart }) => {
   const results = paymentcart.data[0]
-
+  const [refetch, setRefetch] = useState('')
   const { data } = useSelector((state) => state.login)
   console.log(data, 'tesbro')
-  // console.log(localStorage.getItem('root'))
-  // var dim             = $("#dim").val();
-  //       var atas_nama       = $("#atas_nama").val();
-  //       var nama_bank       = $("#nama_bank").val();
-  //       var nomor_rekening  = $("#nomor_rekening").val();
-  //       var kantor_cabang   = $("#kantor_cabang").val();
 
-  //       $.ajax({
-  //         type:'POST',
-  //         url: '<?php echo base_url() . 'payment/update-bank-account' ?>',
-  //         data:{'dim':dim, 'atas_nama':atas_nama, 'nama_bank':nama_bank, 'nomor_rekening':nomor_rekening, 'kantor_cabang':kantor_cabang},
-  //         dataType : 'json',
-  //         success: function (data) {
-  //             if (data.status == 200) {
-  //                 Swal.fire({
-  //                   type: 'success',
-  const handlePayment = () => {
-    var user_id = document.getElementById('user_id').value
-    console.log(user_id, 'user_id')
-    var total_Price = document.getElementById('payment').innerText
-    var total_Price = document.getElementById('payment').innerText
-    var total_Price = document.getElementById('payment').innerText
+  // const userId = document.getElementById('user_id').value
+  // const productId = document.getElementById('product_id').value
+  // const productName = document.getElementById('product_name').innerText
+  // const totalPrice = document.getElementById('total').innerText
+  const formData = new FormData()
+  // const [formAddData, setFormAddData] = useState({})
+  formData.append('user_id', data.user_id)
+  formData.append('product_id', results.product_id)
+  formData.append('product_name', results.product_name)
+  formData.append('total_price', results.price)
+  const handlePayment = async (event) => {
+    event.preventDefault()
+    try {
+      const res = await axios({
+        method: 'POST',
+        url: `${process.env.NEXT_PUBLIC_API_URL}/payment`,
+        data: formData,
+        // {
+        //   user_id: data.user_id,
+        //   product_id: results.product_id,
+        //   product_name: results.product_name,
+        //   total_price: results.price,
+        // },
+        headers: {
+          authorization: data.token,
+          // 'Content-Type': 'multipart/form-data',
+        },
+      })
+      if (res) {
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Payment Success',
+          showConfirmButton: false,
+          timer: 1500,
+          // width: '20em',
+          height: '5em',
+        })
+        setRefetch(!refetch)
+      }
+    } catch (error) {
+      alert(error)
+    }
   }
 
   return (
@@ -40,9 +64,14 @@ const PaymentCustomer = ({ paymentcart }) => {
       <div className={styles.container}>
         <div className={`${styles.wrapProduct} container`}>
           <div className="row">
-            <div>
+            <div className={styles.titlePage}>
               <h2>Checkout your item now!</h2>
               <input type="hidden" id="user_id" value={data.user_id}></input>
+              <input
+                type="hidden"
+                id="product_id"
+                value={results.product_id}
+              ></input>
             </div>
             <div className={styles.paymentInfo}>
               <div className={styles.orderSummary}>
@@ -59,13 +88,18 @@ const PaymentCustomer = ({ paymentcart }) => {
                       alt="cover"
                       style={{ borderRadius: '10px' }}
                     />
-                    <h5>{results.product_name}</h5>
+                    <h5>
+                      {' '}
+                      <span id="product_name">{results.product_name}</span>{' '}
+                    </h5>
                   </div>
                 </div>
                 <div className={styles.price}>
                   <div className={styles.subtotal}>
                     <p>SUBTOTAL</p>
-                    <p>IDR {results.price}</p>
+                    <p>
+                      IDR <span id="sub_total">{results.price}</span>{' '}
+                    </p>
                   </div>
                   {/* <div className={styles.tax}>
                     <p>TAX & FEES</p>
@@ -79,7 +113,7 @@ const PaymentCustomer = ({ paymentcart }) => {
                 <div className={styles.total}>
                   <p>TOTAL </p>
                   <p>
-                    IDR <span id="payment">{results.price}</span>{' '}
+                    IDR <span id="total">{results.price}</span>{' '}
                   </p>
                 </div>
               </div>
@@ -94,7 +128,7 @@ const PaymentCustomer = ({ paymentcart }) => {
                       Km 5 refinery road oppsite republic
                       <br /> road, effurun, Jakarta
                     </p>
-                    <p className={styles.phoneUser}>{data.phone_number}</p>
+                    <p className={styles.phoneUser}>+6281212876564</p>
                   </div>
                 </div>
                 <div className={styles.paymentMethod}>

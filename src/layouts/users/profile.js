@@ -2,46 +2,63 @@ import Image from 'next/image'
 import styles from './Profile.module.css'
 import profile from '../../../assets/img/profile.png'
 import edit from '../../../assets/img/edit-pencil.png'
+import { useDispatch, useSelector } from 'react-redux'
+import { AuthLogout } from '../../redux/actions/Auth'
+import { useRouter } from 'next/router'
 const Profile = () => {
+  const { data } = useSelector((state) => state.login)
+  console.log(data, 'dataku')
+  const router = useRouter()
+  const dispatch = useDispatch()
   return (
     <>
-      <div className={styles.container}>
-        <div className={styles.wrapFlex}>
+      <div className={styles.rowProfile}>
+        <div className={`${styles.wrapFlex} container`}>
           <div className={styles.titlePage}>
-            <h1>User Profile</h1>
+            <p>User Profile</p>
           </div>
           <div className={styles.cardProfile}>
             <div className={styles.action}>
               <div className={styles.top}>
-                <Image alt="profile" src={profile} width={100} height={100} />
+                <div className={styles.profilePicture}>
+                  <Image alt="profile" src={profile} width={100} height={100} />
+                </div>
                 <h3>Komeng</h3>
-                <p>komeng@mail.com</p>
+                <p>{data.email}</p>
                 <button className={styles.choosePhoto}>Choose photo</button>
                 <button className={styles.removePhoto}>Remove photo</button>
               </div>
               <div className={styles.middle}>
                 <button className={styles.editPassword}>Edit Password</button>
-                <h3>
+                <p>
                   Do you want to save <br /> the change?
-                </h3>
+                </p>
               </div>
               <div className={styles.bottom}>
                 <button className={styles.saveChanges}>Save Change</button>
                 <button className={styles.cancel}>Cancel</button>
-                <button className={styles.logout}>Logout</button>
+                <button
+                  className={styles.logout}
+                  onClick={() => {
+                    dispatch(AuthLogout())
+                    router.push('/signin')
+                  }}
+                >
+                  Logout
+                </button>
               </div>
             </div>
             <div className={styles.cardContact}>
               <div className={styles.contacts}>
                 <div className={styles.header}>
-                  <h2>Contacts</h2>
+                  <p>Contacts</p>
                   <Image alt="edit" src={edit} />
                 </div>
                 <div className={styles.formContacts}>
                   <div className={styles.leftContacts}>
                     <div className={styles.email}>
                       <label>Email address:</label>
-                      <input type="text"></input>
+                      <input type="text" defaultValue={data.email}></input>
                     </div>
                     <div className={styles.address}>
                       <label>Delivery address:</label>
@@ -51,14 +68,17 @@ const Profile = () => {
                   <div className={styles.rightContacts}>
                     <div className={styles.mobileNumber}>
                       <label>Mobile Number:</label>
-                      <input type="text"></input>
+                      <input
+                        type="text"
+                        defaultValue={data.phone_number}
+                      ></input>
                     </div>
                   </div>
                 </div>
               </div>
               <div className={styles.details}>
                 <div className={styles.title}>
-                  <h2>Details</h2>
+                  <p>Details</p>
                 </div>
                 <div className={styles.formDetails}>
                   <div className={styles.leftForm}>

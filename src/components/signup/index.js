@@ -56,13 +56,15 @@ const Register = () => {
           <div className={styles.rightSide}>
             <form onSubmit={(event) => handleRegister(event)}>
               <div className={styles.header}>
-                <div className={styles.logo}>
-                  <h4>
-                    <Image alt="logo" src={logo} /> Coffee Shop
-                  </h4>
-                </div>
+                <Link href="/">
+                  <div className={styles.logo}>
+                    <p>
+                      <Image alt="logo" src={logo} /> Coffee Shop
+                    </p>
+                  </div>
+                </Link>
                 <div className={styles.signup}>
-                  <h2>Sign Up</h2>
+                  <p>Sign Up</p>
                 </div>
               </div>
               <div className={styles.email}>

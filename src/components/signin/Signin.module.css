@@ -16,6 +16,12 @@
     flex: 1;
 }
 
+.logo{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
 .rightSide{
     display: flex;
     flex-direction: column;
@@ -25,11 +31,14 @@
     margin: 2rem 5rem;
 }
 
-.rightSide .logo h4{
+.rightSide .logo p{
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     column-gap: 10px;
+    font-weight: 600;
 }
 
 .rightSide .header{
@@ -40,6 +49,12 @@
     margin-bottom: 5rem;
 }
 
+.login p{
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
 /* .login{
     width: 3rem;
     height: 32px;
@@ -88,6 +103,7 @@
     border-radius: 15px;
     color: #6A4029;
     padding: 0 1rem;
+    outline: none;
 }
 
 .password{
@@ -106,6 +122,7 @@
     border-radius: 15px;
     color: #6A4029;
     padding: 0 1rem;
+    outline: none;
 }
 
 .btnLogin{
@@ -188,6 +205,15 @@
         display: none;
     }
 
+    .rightSide{
+        
+        margin: 3rem 0;
+    }
 
+    .rightSide .header{
+        margin-left: 3rem;
+        margin-right: 3rem;
+        margin-bottom: 4rem;
+    }
 
 }

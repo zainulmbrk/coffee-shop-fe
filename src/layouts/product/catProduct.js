@@ -1,25 +1,70 @@
+import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+// import { useSearchParams } from 'react-router-dom'
 import { GetProduct } from '../../redux/actions/Product'
 import { useRouter } from 'next/router'
 import { GetCategory } from '../../redux/actions/Category'
 import Link from 'next/link'
 import styles from './CatProduct.module.css'
 import Image from 'next/image'
-const CatProduct = ({ data }) => {
+import { FaSort } from 'react-icons/fa'
+const CatProduct = () => {
   const dispatch = useDispatch()
 
-  const results = data.data.results
-  console.log(results, 'iininiiin')
+  // const results = data.data.results
+  // console.log(results, 'iininiiin')
   let router = useRouter()
   // const data = useSelector((state) => state.product)
-  const [showProduct, setShowProduct] = useState()
+
+  const [listProduct, setListProduct] = useState({
+    data: {
+      totalRow: 0,
+      totalPage: 0,
+      results: [],
+    },
+  })
+  console.log(listProduct, 'yoyoyo')
+  const [search, setSearch] = useState('')
+  const [sortProduct, setSortProduct] = useState({ sortby: 'desc' })
+
+  //pagination
+  // const [params, setParams] = useSearchParams()
+  // const [paginate, setPaginate] = useState({
+  //   page: params.get('page') ?? 1,
+  //   limit: 8,
+  // })
+  // let totalPage = Array(listProduct.totalPage).fill() ?? []
+
+  // const handlePaginate = (page) => {
+  //   setPaginate((prevState) => ({ ...prevState, page }))
+  //   params.set('page', page)
+  //   setParams(params)
+  // }
+
+  useEffect(() => {
+    axios({
+      method: 'GET',
+      url: `${process.env.NEXT_PUBLIC_API_URL}/product/?product_name=${search}&sortby=${sortProduct.sortby}`,
+    })
+      .then((res) => {
+        setListProduct(res.data)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }, [sortProduct, search])
 
   useEffect(() => {
     dispatch(GetCategory())
   }, [])
   const dataCategory = useSelector((state) => state.category)
-  console.log(dataCategory, 'ininiiinini')
+
+  // const [params, setParams] = useState({
+  //   product_name:'',
+  //   category:''
+  // })
+
   return (
     <>
       <div className={styles.sectionProduct}>
@@ -102,8 +147,85 @@ const CatProduct = ({ data }) => {
                     )
                   })}
                 </div>
-                <div className={styles.listProduct}>
-                  {results?.map((item) => {
+                <div className={styles.filter}>
+                  <div>
+                    <span style={{ fontSize: '0.9rem', fontWeight: '600' }}>
+                      Search result for: {search}{' '}
+                    </span>
+                  </div>
+                  <div className={styles.filterRight}>
+                    <input
+                      style={{
+                        color: '#000',
+                        backgroundColor: '#fff',
+                        borderRadius: '10px',
+                        border: '1px solid lightgrey',
+                        outline: 'none',
+                        padding: '5px 10px',
+                        fontSize: '0.9rem',
+                      }}
+                      type="text"
+                      placeholder="Search for product"
+                      onChange={(event) => setSearch(event.target.value)}
+                    />
+                    <div className={styles.sorting}>
+                      <div
+                        className="btn-group "
+                        style={{ borderRadius: '5px' }}
+                      >
+                        <button
+                          type="button"
+                          // className="btnSort dropdown d-flex justify-content-between align-items-center gap-1"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          <FaSort />
+                          sort
+                        </button>
+                        <ul className="dropdown-menu dropdown-menu-end mt-2">
+                          <li>
+                            <button
+                              className="dropdown-item"
+                              type="button"
+                              onClick={() =>
+                                setSortProduct((prevState) => ({
+                                  ...prevState,
+                                  sortby: 'asc',
+                                }))
+                              }
+                            >
+                              A-Z
+                            </button>
+                          </li>
+                          <div
+                            style={{
+                              width: '100%',
+                              height: '1px',
+                              backgroundColor: '#DEDEDE',
+                              margin: '2px 0',
+                            }}
+                          />
+                          <li>
+                            <button
+                              className="dropdown-item"
+                              type="button"
+                              onClick={() =>
+                                setSortProduct((prevState) => ({
+                                  ...prevState,
+                                  sortby: 'desc',
+                                }))
+                              }
+                            >
+                              Z-A
+                            </button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className={styles.listProductPage}>
+                  {listProduct?.data?.results?.map((item) => {
                     return (
                       <>
                         <Link href={`/product/${item.product_id}`}>
@@ -136,9 +258,31 @@ const CatProduct = ({ data }) => {
                 </div>
               </div>
             </div>
+            {/* <nav aria-label="Page navigation example">
+              <ul className="pagination justify-content-center mt-5 gap-2">
+                {totalPage.map((item, index) => {
+                  return (
+                    <>
+                      <li className="page-item page-item-link">
+                        <a
+                          className={` page-link ${
+                            paginate.page === index + 1
+                          }`}
+                          onClick={() => handlePaginate(index + 1)}
+                        >
+                          {index + 1}
+                        </a>
+                      </li>
+                    </>
+                  )
+                })}
+              </ul>
+            </nav> */}
           </div>
         </div>
       </div>
+      {/* </div>
+      </div> */}
     </>
   )
 }

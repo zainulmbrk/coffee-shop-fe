@@ -59,14 +59,16 @@ const Login = () => {
           <div className={styles.rightSide}>
             <form onSubmit={(event) => handleLogin(event)}>
               <div className={styles.header}>
-                <div className={styles.logo}>
-                  <h4>
-                    {' '}
-                    <Image alt="logo" src={logo} /> Coffee Shop
-                  </h4>
-                </div>
+                <Link href="/">
+                  <div className={styles.logo}>
+                    <p>
+                      {' '}
+                      <Image alt="logo" src={logo} /> Coffee Shop
+                    </p>
+                  </div>
+                </Link>
                 <div className={styles.login}>
-                  <h2>Login</h2>
+                  <p>Login</p>
                 </div>
               </div>
 

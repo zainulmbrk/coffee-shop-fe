@@ -161,3 +161,51 @@
     background-color: #fff;
     color: #6A4029;
 }
+
+@media (max-width: 600px) {
+    .paymentInfo{
+        display: flex;
+        flex-direction: column;
+        color: black;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 1rem;
+    }
+
+    .orderSummary{
+        display: flex;
+        flex-direction: column;
+        color: black;
+        background-color: #fff;
+        border-radius: 10px;
+        border: none;
+        padding: 0 1.5rem;
+        /* row-gap: 20px; */
+        width: 80%;
+        margin: 0 0.5rem;
+        /* height: 537px; */
+    }
+
+    .titlePage{
+        text-align: center;
+    }
+
+    .custInfo{
+        margin-top: 1rem;
+    }
+
+    .custInfo .address .titleAddress{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .custInfo .paymentMethod{
+        margin-top: 1rem;
+    }
+    
+    .custInfo .paymentMethod .titlePaymentMethod{
+        text-align: center;
+    }
+    
+}

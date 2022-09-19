@@ -2,7 +2,6 @@
     box-sizing: border-box;
     width: 100%;
     background-color: #fff;
-    /* color: black; */
     font-family: 'Helvetica', sans-serif;
     border: 1px solid #9F9F9F;
     position: sticky;
@@ -10,17 +9,40 @@
     z-index: 100;
     padding: 1rem 0;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
 
+.rowNavbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.colLogo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    width: 20%;
 }
 
 .logo p{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 10px;
     color: #0B132A;
     font-weight: 700;
-    /* margin:auto; */
+    margin: 0;
+    padding: 0;    
+}
+
+.navMenu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
 }
 
 .nav{
@@ -30,7 +52,6 @@
     column-gap: 1.5rem;
     /* color: #6A4029; */
     cursor: pointer;
-    
 }
 
 .nav a:hover{
@@ -53,7 +74,6 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    
 }
 
 .auth .login{
@@ -92,6 +112,10 @@
     
 }
 
+.hamburgerMenu{
+    display: none;
+}
+
 .auth .logout{
     background-color: transparent;
     color: #0B132A;
@@ -112,6 +136,15 @@
     justify-content: center;
     align-items: center;
     column-gap: 20px;
+}
+
+.nav .navDesktop{
+    display: flex;
+    column-gap: 1.3rem;
+}
+
+.nav .navResponsive{
+    display: none;
 }
 
 .dropbtn {
@@ -142,7 +175,7 @@
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     right: 7rem;
-    top: 5rem;
+    top: 4.1rem;
     border-radius: 5px;
   }
   
@@ -159,16 +192,6 @@
     display: block;
   }
   
-  /* .dropdownContent a:hover {background-color: #f1f1f1}
-  
-  .dropdown:hover .dropdownContent {
-    display: block;
-  }
-   */
-  /* .dropdown:hover .dropbtn {
-    background-color: #3e8e41;
-  }
- */
 
 @media (max-width: 600px) {
 
@@ -176,15 +199,83 @@
     .product{
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
-
     }
 
-    .nav{
+    .rowNavbar{
+        display: flex;
+        justify-content: space-between;
+        /* background-color: #0B132A; */
+        align-items: center;
+        margin: 0;
+    }
+
+    .logo{
+        width: 40%;
+    }
+
+    .auth {
         display: none;
     }
 
-    .auth{
+    .navMenu{
         display: none;
     }
+
+    .navMenu.active{
+        display: block;
+        position: absolute;
+        top: 3.9em;
+        width: 100%;
+        background-color: #fff;
+        z-index: 1;
+        height: 100vh;
+        right: 0;
+        left: 0;
+    }
+
+    .hamburgerMenu{
+        display: block;
+    }
+
+    .nav .navDesktop{
+        display: none;
+    }
+
+    .nav .navResponsive{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        /* background-color: #0B132A; */
+        justify-content: center;
+        align-items: center;
+        row-gap: 2rem;
+        margin-top: 2rem;
+        color: #0B132A;
+    }
+
+    .nav .navResponsive .logout{
+        background-color: #6A4029;
+        width: 50%;
+        padding: 0.2rem 0;
+        border: 1px solid #6A4029;
+        outline: none;
+        border-radius: 5px;
+    }
+
+    .nav .navResponsive .btnLogin{
+        background-color: #6A4029;
+        width: 50%;
+        padding: 0.2rem 0;
+        border: 1px solid #6A4029;
+        outline: none;
+        border-radius: 5px;
+    }
+
+    .hline{
+        width: 100%;
+        height: 1px;
+        background-color: #9F9F9F;
+        opacity: 0.2;
+    }
+
 }

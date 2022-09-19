@@ -1,16 +1,21 @@
-.container{
+.rowProfile{
     background-image: url('../../../assets/img/bg-profile.png');
     width: 100%;
-    height: 800px;
+    font-family: 'Helvetica', sans-serif;
 }
 
 .wrapFlex{
     display: flex;
     flex-direction: column;
+    padding-top: 3.5rem;
 }
 
-.wrapFlex .titlePage{
-    margin-left: 10rem;
+.titlePage p{
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.2rem;
 }
 
 .cardProfile{
@@ -19,7 +24,8 @@
     background-color: #F8F8F8;
     border: none;
     border-radius: 10px;
-    margin: 2rem 10rem;
+    margin: 2rem 0;
+    padding: 2rem 0;
 }
 
 .cardProfile .action{
@@ -27,6 +33,7 @@
     flex-direction: column;
     padding: 32px;
     width: 30%;
+    
 }
 
 .top{
@@ -37,6 +44,13 @@
     row-gap: 16px;
 }
 
+.top .profilePicture{
+    display: flex;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+}
+
 .top p{
     margin-top: -32px;
     font-size: 12px;
@@ -44,7 +58,7 @@
 }
 
 .top button{
-    height: 32px;
+    padding: 10px;
     border-radius: 5px;
     border: none;
     cursor: pointer;
@@ -79,12 +93,16 @@
     margin-top: 32px;
 }
 
-.middle h3{
+.middle p{
     text-align: center;
+    color: #6A4029;
+    font-weight: 600;
+    font-size: 1rem;
+    margin: 2rem 0;
 }
 
 .middle button{
-    height: 32px;
+    padding: 10px;
     border: 1px solid #9F9F9F;
     border-radius: 5px;
     background-color: #fff;
@@ -105,7 +123,7 @@
 }
 
 .bottom button{
-    height: 32px;
+    padding: 10px;
     border-radius: 5px;
     border: none;
 }
@@ -153,6 +171,10 @@
     display: flex;
     flex-direction: column;
     width: 70%;
+    background-color: #fff;
+    margin: 0 2rem;
+    border-radius: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
 .contacts{
@@ -167,16 +189,37 @@
     align-items: center;
 }
 
+.contacts .header p{
+    font-size: 1.3rem;
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    color: #9F9F9F;
+}
+
 .formContacts{
     display: flex;
     margin: 0 50px;
     justify-content: space-between;
+    column-gap: 1rem;
+}
+
+.formContacts input{
+    background-color: #fff;
+    border: 1px solid lightgray;
+    width: 100%;
+    padding: 0.2rem 0.5rem;
+    outline: none;
+    color: #000;
+    border-radius: 5px;
 }
 
 
 .formContacts .leftContacts{
     display: flex;
     flex-direction: column;
+    width: 100%;
+    row-gap: 1rem;
 }
 
 .leftContacts .email{
@@ -187,6 +230,10 @@
 .leftContacts .address{
     display: flex;
     flex-direction: column;
+}
+
+.formContacts .rightContacts{
+    width: 100%;
 }
 
 .formContacts .rightContacts .mobileNumber{
@@ -200,20 +247,43 @@
     flex-direction: column;
 }
 
+.details .title p{
+    font-size: 1.3rem;
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    color: #9F9F9F;
+    margin-bottom: 1rem;
+}
+
 .formDetails{
     display: flex;
     justify-content: space-between;
+    column-gap: 1rem;
+}
+
+.formDetails input{
+    background-color: #fff;
+    border: 1px solid lightgray;
+    width: 100%;
+    padding: 0.2rem 0.5rem;
+    outline: none;
+    color: #000;
+    border-radius: 5px;
 }
 
 .leftForm{
     display: flex;
     flex-direction: column;
+    width: 100%;
+    row-gap: 1rem;
 }
 
 .leftForm .displayName{
     display: flex;
     flex-direction: column;
 }
+
 
 .leftForm .firstName{
     display: flex;
@@ -228,9 +298,80 @@
 .rightForm{
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .rightForm .date{
     display: flex;
     flex-direction: column;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 600px){
+    .cardProfile{
+        display: flex;
+        flex-direction: column;
+        color: #000;
+        background-color: #F8F8F8;
+        border: none;
+        border-radius: 10px;
+        margin: 2rem 0;
+        padding: 2rem 0;
+    }
+
+    .cardProfile .action{
+        display: flex;
+        flex-direction: column;
+        padding: 32px;
+        width: 100%;  
+    }
+
+    .cardContact{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: #fff;
+        margin: 0 ;
+        border-radius: 10px;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    }
+
+    .formContacts{
+        display: flex;
+        flex-direction: column;
+        margin: 0 50px;
+        justify-content: space-between;
+        row-gap: 1rem;
+    }
+
+    .formContacts .leftContacts{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        row-gap: 1rem;
+    }
+
+    .details{
+        display: flex;
+        margin: 24px 50px;
+        flex-direction: column;
+    }
+    
+    .details .title p{
+        font-size: 1.3rem;
+        margin: 0;
+        padding: 0;
+        font-weight: 600;
+        color: #9F9F9F;
+    }
+
+    .formDetails{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        column-gap: 1rem;
+        row-gap: 1rem;
+    }
+    
 }

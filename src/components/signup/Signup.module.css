@@ -32,20 +32,25 @@
     margin-bottom: 5rem;
 }
 
-.rightSide .logo h4{
+.logo{
+    cursor: pointer;
+}
+
+.rightSide .logo p{
     display: flex;
     justify-content: center;
     align-items: center;
     column-gap: 10px;
+    margin: 0;
+    padding: 0;
 }
 
-
-
-/* .login{
-    width: 3rem;
-    height: 32px;
-    background-color: #FFBA33;
-} */
+.signup p{
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
 
 .email{
     display: flex;
@@ -63,6 +68,7 @@
     border-radius: 15px;
     color: #6A4029;
     padding: 0 1rem;
+    outline: none;
 }
 
 .password{
@@ -81,6 +87,7 @@
     border-radius: 15px;
     color: #6A4029;
     padding: 0 1rem;
+    outline: none;
 }
 
 .phone{
@@ -99,6 +106,7 @@
     border-radius: 15px;
     color: #6A4029;
     padding: 0 1rem;
+    outline: none;
 }
 
 .btnSignup{
@@ -180,6 +188,15 @@
         display: none;
     }
 
+    .rightSide{
+        
+        margin: 3rem 0;
+    }
 
+    .rightSide .header{
+        margin-left: 3rem;
+        margin-right: 3rem;
+        margin-bottom: 4rem;
+    }
 
 }
