@@ -23,10 +23,9 @@ Coffee-Shop FE made with Next.js, Bootstrap, React Redux
 
 ## Link:
 https://coffee-shop-fe.vercel.app/
-Admin: bokir@mail.com
+<br/>Admin: bokir@mail.com
 pass: bokir
-
-User: kadir@mail.com
+<br/>User: kadir@mail.com
 pass: kadir
 
 
@@ -34,7 +33,7 @@ pass: kadir
 - Signup
 - Signin
 - Home
-- Product => sort, search
+- Product
 - Product Details
 - Payment
 - Cart
