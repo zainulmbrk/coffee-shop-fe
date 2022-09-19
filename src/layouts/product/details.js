@@ -6,14 +6,11 @@ import sizeXL from '../../../assets/img/sizeXL.png'
 import styles from '../../layouts/product/Details.module.css'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-const Details = ({ data }) => {
-  console.log(data, 'ini cuuks')
-  const results = data.data[0]
+import { useSelector } from 'react-redux'
+const Details = ({ products }) => {
+  const results = products.data[0]
   let router = useRouter()
-  // const handleCheckout = (event)=>{
-  //     event.preventDefault()
-  //     router.push("/payment")
-  // }
+  const { isLogin } = useSelector((state) => state.login)
   return (
     <>
       <div className={styles.detailsRow}>
@@ -96,27 +93,33 @@ const Details = ({ data }) => {
               </div>
             </div>
             <div className={styles.checkoutAction}>
-              <div className={styles.cardCheckout}>
-                <div className={styles.contentCheckout}>
-                  <Image
-                    src={`${process.env.NEXT_PUBLIC_API_URL_IMAGE}/${results.cover}`}
-                    width={50}
-                    height={50}
-                    alt="cover"
-                    style={{ borderRadius: '50px' }}
-                  />
-                  <p>{results.product_name}</p>
-                </div>
-              </div>
-              <div className={styles.btnCheckout}>
-                {/* <Link href={`/payment/${item.product_id}`}> */}
-                <button
-                  onClick={() => router.push(`/payment/${results.product_id}`)}
-                >
-                  CHECKOUT
-                </button>
-                {/* </Link> */}
-              </div>
+              {isLogin ? (
+                <>
+                  <div className={styles.cardCheckout}>
+                    <div className={styles.contentCheckout}>
+                      <Image
+                        src={`${process.env.NEXT_PUBLIC_API_URL_IMAGE}/${results.cover}`}
+                        width={50}
+                        height={50}
+                        alt="cover"
+                        style={{ borderRadius: '50px' }}
+                      />
+                      <p>{results.product_name}</p>
+                    </div>
+                  </div>
+                  <div className={styles.btnCheckout}>
+                    <button
+                      onClick={() =>
+                        router.push(`/payment/${results.product_id}`)
+                      }
+                    >
+                      CHECKOUT
+                    </button>
+                  </div>
+                </>
+              ) : (
+                ''
+              )}
             </div>
           </div>
         </div>
