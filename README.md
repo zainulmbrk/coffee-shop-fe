@@ -19,7 +19,16 @@
 </ol>
 
 ## About The Project
-Tickitz backend made with express.js, node.js, and mysql
+Coffee-Shop FE made with Next.js, Bootstrap, React Redux
+
+## Link:
+https://coffee-shop-fe.vercel.app/
+Admin: bokir@mail.com
+pass: bokir
+
+User: kadir@mail.com
+pass: kadir
+
 
 ### Feature
 - Signup
@@ -47,15 +56,6 @@ Tickitz backend made with express.js, node.js, and mysql
 Get started with this project, intructions on setting up your project locally.<br />
 To get a local copy up and running follow these simple steps.
 ### Prerequisites
-
-
-## Link:
-https://coffee-shop-fe.vercel.app/
-Admin: bokir@mail.com
-pass: bokir
-
-User: kadir@mail.com
-pass: kadir
 
 Before installing, you must be install [node js](https://nodejs.org) 
 ### Installation
