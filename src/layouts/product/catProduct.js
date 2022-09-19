@@ -148,7 +148,7 @@ const CatProduct = () => {
                   })}
                 </div>
                 <div className={styles.filter}>
-                  <div>
+                  <div className={styles.filterLeft}>
                     <span style={{ fontSize: '0.9rem', fontWeight: '600' }}>
                       Search result for: {search}{' '}
                     </span>

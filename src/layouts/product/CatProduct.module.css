@@ -154,7 +154,7 @@
 .rightContent{
     border-left: 1px solid lightgray;
     margin-top: 2rem;
-    height: 100vh;
+    /* height: 100vh; */
 }
 .rightContent .header {
     display: flex;
@@ -289,11 +289,7 @@
         
     }
 
-    .rightContent{
-        border: none;
-        margin-bottom: 10rem;
-        height: 140vh;
-    }
+
 
     .rightContent .header{
         display: flex;
@@ -321,6 +317,10 @@
     .listProductPage>* {
         flex: 0 0 40%;
         
+    }
+
+    .filter .filterLeft{
+        display: none;
     }
     
 
@@ -351,11 +351,10 @@
         
     }
 
-    .rightContent{
+    /* .rightContent{
         border: none;
-        /* margin-bottom: 10rem; */
         height: 110vh;
-    }
+    } */
 
     .rightContent .header{
         display: flex;
@@ -414,11 +413,7 @@
         
     }
 
-    .rightContent{
-        border: none;
-        /* margin-bottom: 10rem; */
-        height: 140vh;
-    }
+
 
     .rightContent .header{
         display: flex;
@@ -478,11 +473,6 @@
         
     }
 
-    .rightContent{
-        border: none;
-        /* margin-bottom: 10rem; */
-        height: 125vh;
-    }
 
     .rightContent .header{
         display: flex;
@@ -541,11 +531,7 @@
         
     }
 
-    .rightContent{
-        border: none;
-        /* margin-bottom: 10rem; */
-        height: 100vh;
-    }
+
 
     .rightContent .header{
         display: flex;
