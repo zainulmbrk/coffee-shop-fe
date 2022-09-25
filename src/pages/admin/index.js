@@ -13,7 +13,7 @@ const Dashboard = ({ products }) => {
 export default Dashboard
 
 export async function getServerSideProps() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL_BE}/api/v1/product`)
   const products = await res.json()
   return { props: { products } }
 }

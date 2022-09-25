@@ -1,71 +1,158 @@
-.container {
+.rowHistory {
     margin-top: -1.3rem;
     width: 100%;
-    height: 200vh;
+    font-family: 'Helvetica', sans-serif;
+    background-color: #F7F7F7;
 }
 
-.header {
+.orderHistory {
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
-.header h2 {
-    margin-top: 64px;
+.orderHistory p {
+    font-size: 1.3em;
+    font-weight: 1000;
+    color: #111415;
+    margin-top: 5em;
 }
 
-.header p {
-    font-size: 12px;
-    margin-top: -1rem;
+.noOrder{
+    width: 100%;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.noOrder p{
+    font-size: 1.3em;
+    font-weight: 1000;
+    color: #111415;
+    margin-top: 1em;
+}
+
+.noOrder .noOrderHistory{
+    font-size: 1em;
+    font-weight: 700;
+    color:#111415;
+    margin:0;
+    padding:0
 }
 
 .wrapCard {
     display: flex;
-    column-gap: 10px;
+    column-gap: 30px;
     justify-content: center;
+    flex-wrap: wrap;
+}
+
+.wrapCard>* {
+    flex: 0 0 25%;
 }
 
 .cardOrder {
-    width: 30%;
+    width: 100%;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     background-color: #fff;
     border-radius: 15px;
     display: inline-flex;
-    justify-content: flex-start;
     align-items: center;
     column-gap: 5px;
-    margin: 48px 0;
+    margin-top: 1em;
+    margin-bottom: 5em;
+    padding: 5px;
 }
 
-.cardOrder h5 {
+.cardOrder:hover .btnDelete{
+    display: block;
+    background: #895537;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    padding: 5px;
+    margin-top: -3.5em;
+    margin-left: 0;
+    position: absolute;
+}
+
+.cardOrder .infoOrder{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    width: 60%;
+}
+
+.cardOrder .infoOrder .nameProduct {
     color: #000;
     font-weight: bold;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
 }
 
-.cardOrder p {
+.cardOrder .infoOrder p {
+    margin: 0;
+    padding: 0;
     font-size: 12px;
     color: #895537;
     font-weight: 600;
 }
 
 .cover {
-    width: 100px;
+    width: 20%;
     border-radius: 50px;
-    margin: auto 16px;
+    margin: 0 16px;
+}
+
+/* .cardOrder .actionDelete{
+    margin-top: -5em;
+    margin-right: -5em;
+} */
+
+.actionDelete .btnDelete{
+   
+    display: none;
+   
 }
 
 
 @media (max-width: 600px) {
-    .cardOrder {
+    
+    .wrapCard {
         display: flex;
         flex-direction: column;
+        column-gap: 0;
         justify-content: center;
-        text-align: center;
-    }
-    .cover{
-        width: 75px;
-        margin: 16px 0;
+        /* row-gap: 15px; */
     }
 
+    .cardOrder {
+        width: 100%;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        background-color: #fff;
+        border-radius: 15px;
+        display: inline-flex;
+        align-items: center;
+        column-gap: 5px;
+        margin-top: 0;
+        margin-bottom: 1em;
+        padding: 5px;
+    }
+    
+    .cardOrder:hover .btnDelete{
+        display: block;
+        background: #895537;
+        border: none;
+        outline: none;
+        border-radius: 50%;
+        padding: 5px;
+        margin-top: -3.5em;
+        margin-left: 0.5em;
+        position: absolute;
+    }
 }

@@ -3,40 +3,38 @@ import Image from 'next/image'
 import card from '../../../assets/img/card.png'
 import bank from '../../../assets/img/bank.png'
 import cod from '../../../assets/img/cod.png'
+import cart from '../../../assets/img/cart.png'
 import Swal from 'sweetalert2'
 import axios from 'axios'
 import { useSelector } from 'react-redux'
 import { useState } from 'react'
-
+import { useRouter } from 'next/router'
 const PaymentCustomer = ({ paymentcart }) => {
   const results = paymentcart.data[0]
   const [refetch, setRefetch] = useState('')
   const { data } = useSelector((state) => state.login)
   console.log(data, 'tesbro')
+  const router = useRouter()
 
-  // const userId = document.getElementById('user_id').value
-  // const productId = document.getElementById('product_id').value
-  // const productName = document.getElementById('product_name').innerText
-  // const totalPrice = document.getElementById('total').innerText
-  const formData = new FormData()
+  // const formData = new FormData()
   // const [formAddData, setFormAddData] = useState({})
-  formData.append('user_id', data.user_id)
-  formData.append('product_id', results.product_id)
-  formData.append('product_name', results.product_name)
-  formData.append('total_price', results.price)
+  // formData.append('user_id', data.user_id)
+  // formData.append('product_id', results.product_id)
+  // formData.append('product_name', results.product_name)
+  // formData.append('total_price', results.price)
   const handlePayment = async (event) => {
     event.preventDefault()
     try {
       const res = await axios({
         method: 'POST',
-        url: `${process.env.NEXT_PUBLIC_API_URL}/payment`,
-        data: formData,
-        // {
-        //   user_id: data.user_id,
-        //   product_id: results.product_id,
-        //   product_name: results.product_name,
-        //   total_price: results.price,
-        // },
+        url: `https://app-coffee-shop.herokuapp.com/api/v1/payment`,
+        data:
+        {
+          user_id: data.user_id,
+          product_id: results.product_id,
+          product_name: results.product_name,
+          total_price: results.price,
+        },
         headers: {
           authorization: data.token,
           // 'Content-Type': 'multipart/form-data',
@@ -53,6 +51,7 @@ const PaymentCustomer = ({ paymentcart }) => {
           height: '5em',
         })
         setRefetch(!refetch)
+
       }
     } catch (error) {
       alert(error)
@@ -65,15 +64,16 @@ const PaymentCustomer = ({ paymentcart }) => {
         <div className={`${styles.wrapProduct} container`}>
           <div className="row">
             <div className={styles.titlePage}>
-              <h2>Checkout your item now!</h2>
+              {results ? <h2>Checkout your item now!</h2> : ''}
               <input type="hidden" id="user_id" value={data.user_id}></input>
-              <input
+              {results ? <><input
                 type="hidden"
                 id="product_id"
                 value={results.product_id}
-              ></input>
+              ></input></> : ''}
+
             </div>
-            <div className={styles.paymentInfo}>
+            {results ? <><div className={styles.paymentInfo}>
               <div className={styles.orderSummary}>
                 <div className={styles.titleSummary} key={results.product_id}>
                   <h2>Order Summary</h2>
@@ -170,7 +170,12 @@ const PaymentCustomer = ({ paymentcart }) => {
                   <button onClick={handlePayment}>Confirm and Pay</button>
                 </div>
               </div>
-            </div>
+            </div></> : <><div className={styles.noCart}>
+              <Image src={cart} alt={cart} width={100} height={100} />
+              <p>No Cart Order</p>
+              <p className={styles.noCartHistory}>You don't have any cart</p>
+            </div></>}
+
           </div>
         </div>
       </div>

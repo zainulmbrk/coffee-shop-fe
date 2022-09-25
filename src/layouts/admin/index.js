@@ -13,13 +13,13 @@ const Admin = ({ products }) => {
   const [refetch, setRefetch] = useState('')
 
   const { data } = useSelector((state) => state.login)
-  console.log(data, 'cuks')
+  // console.log(data, 'cuks')
   const [formAddData, setFormAddData] = useState({})
   const [formEditData, setFormEditData] = useState('')
   // console.log(formEditData, 'editnih')
   //add product
   const formData = new FormData()
-  console.log(formData, 'add product')
+  // console.log(formData, 'add product')
   formData.append('cover', formAddData.cover || formEditData.cover)
   formData.append(
     'product_name',
@@ -40,7 +40,7 @@ const Admin = ({ products }) => {
     try {
       const results = await axios({
         method: 'POST',
-        url: `${process.env.NEXT_PUBLIC_API_URL}/product`,
+        url: `${process.env.NEXT_PUBLIC_API_URL_BE}/api/v1/product`,
         data: formData,
         headers: {
           authorization: data.token,
@@ -61,78 +61,12 @@ const Admin = ({ products }) => {
         setRefetch(!refetch)
       }
 
-      // $.ajax({
-      //   async: true,
-      //   type: 'POST',
-      //   url: 'http://localhost:1102/api/v1/product',
-      //   contentType: false,
-      //   // dataType: 'application/json',
-      //   processData: false,
-      //   crossDomain: true,
-      //   cache: false,
-      //   data: formData,
-      //   headers: {
-      //     authorization: data.token,
-      //   },
-      //   success: function (data) {
-      //     console.log(data)
-      //     setRefetch(!refetch)
-      //   },
-      // })
+
     } catch (error) {
       alert(error)
     }
   }
 
-  //delete product
-  // const { datas = data } = useSelector((state) => state.auth)
-  // const handleDelete = async (product_id) => {
-  //   try {
-  //     const result = await axios({
-  //       method: 'DELETE',
-  //       url: `http://localhost:1102/api/v1/product/${product_id}`,
-  //       headers: {
-  //         authorization: data.token,
-  //       },
-  //     })
-  //     const swalWithBootstrapButtons = Swal.mixin({
-  //       customClass: {
-  //         confirmButton: 'btn btn-success',
-  //         cancelButton: 'btn btn-danger',
-  //       },
-  //       buttonsStyling: false,
-  //     })
-  //     swalWithBootstrapButtons.fire({
-  //       title: 'Are you sure?',
-  //       text: `You won't be able to revert this`,
-  //       icon: 'warning',
-  //       showCancelButton: true,
-  //       confirmButtonText: 'YES, DELETE IT',
-  //       cancelButtonText: 'NO, CANCEL',
-  //     })
-  //     if (result) {
-  //       if (result.isConfirmed) {
-  //         swalWithBootstrapButtons.fire(
-  //           'Deleted!',
-  //           'Your file has been deleted.',
-  //           'success',
-  //         )
-  //         setRefetch(!refetch)
-  //       } else if (
-  //         /* Read more about handling dismissals below */
-  //         result.dismiss === Swal.DismissReason.cancel
-  //       ) {
-  //         swalWithBootstrapButtons.fire(
-  //           'Cancelled',
-  //           'Your imaginary file is safe :)',
-  //           'error',
-  //         )
-  //       }
-  //     }
-  //   } catch (error) {
-  //     alert(error)
-  //   }
-  // }
 
   const handleDelete = (product_id) => {
     Swal.fire({
@@ -147,7 +81,7 @@ const Admin = ({ products }) => {
       if (result.isConfirmed) {
         axios({
           method: 'DELETE',
-          url: `${process.env.NEXT_PUBLIC_API_URL}/product/${product_id}`,
+          url: `${process.env.NEXT_PUBLIC_API_URL_BE}/api/v1/product/${product_id}`,
           headers: {
             authorization: data.token,
           },
@@ -170,7 +104,7 @@ const Admin = ({ products }) => {
     try {
       const results = await axios({
         method: 'PATCH',
-        url: `${process.env.NEXT_PUBLIC_API_URL}/product/${product_id}`,
+        url: `${process.env.NEXT_PUBLIC_API_URL_BE}/api/v1/product/${product_id}`,
         data: formData,
         headers: {
           authorization: data.token,
@@ -425,7 +359,7 @@ const Admin = ({ products }) => {
                 // onSubmit={Product Name}
                 encType="multipart/form-data"
                 id="form-uploads"
-                // onSubmit={handleUpdateProduct}
+                onSubmit={() => handleUpdateProduct(formEditData.product_id)}
               >
                 <div className="modal-body">
                   <div className="mb-3">
@@ -522,7 +456,7 @@ const Admin = ({ products }) => {
                   <button
                     type="button"
                     className="btn btn-primary rounded"
-                    onClick={(event) => handleUpdateProduct(event)}
+                    onClick={() => handleUpdateProduct(formEditData.product_id)}
                   >
                     Save changes
                   </button>

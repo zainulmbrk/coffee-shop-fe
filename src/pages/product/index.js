@@ -21,7 +21,7 @@ const Product = ({ data }) => {
 export default Product
 
 export async function getServerSideProps() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL_BE}/api/v1/product`)
   const data = await res.json()
   return { props: { data } }
 }

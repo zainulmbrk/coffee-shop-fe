@@ -55,7 +55,7 @@ const Navbar = () => {
                     </Link>
                   </div>
                   <div className={styles.cart}>
-                    <Link href="/payment">
+                    <Link href="/payment/cart">
                       <a>Cart</a>
                     </Link>
                   </div>

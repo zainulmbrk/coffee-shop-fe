@@ -26,7 +26,7 @@ export const GetProduct = () => {
     dispatch(GetProductRequest())
     axios({
       method: 'GET',
-      url: `${process.env.NEXT_PUBLIC_API_URL}/product`,
+      url: `${process.env.NEXT_PUBLIC_API_URL_BE}/api/v1/product`,
     })
       .then((res) => {
         dispatch(GetProductSuccess(res.data.data))
