@@ -17,7 +17,7 @@ export default ProductDetails
 
 export async function getServerSideProps(context) {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL_BE}/api/v1/product/${context.params.id}`,
+    `https://app-coffee-shop.herokuapp.com/api/v1/product/${context.params.id}`,
   )
   const products = await res.json()
   return { props: { products } }

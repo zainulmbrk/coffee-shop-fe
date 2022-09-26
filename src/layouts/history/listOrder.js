@@ -22,7 +22,7 @@ const ListOrder = () => {
     const user_id = data.user_id
     axios({
       method: `GET`,
-      url: `${process.env.NEXT_PUBLIC_API_URL_BE}/api/v1/payment/${user_id}`,
+      url: `https://app-coffee-shop.herokuapp.com/api/v1/payment/${user_id}`,
       // url: `http://localhost:1102/api/v1/payment/${user_id}`,
       headers: {
         authorization: data.token
@@ -51,7 +51,7 @@ const ListOrder = () => {
       if (result.isConfirmed) {
         axios({
           method: 'DELETE',
-          url: `${process.env.NEXT_PUBLIC_API_URL_BE}/api/v1/payment/${user_id}/${payment_id}`,
+          url: `https://app-coffee-shop.herokuapp.com/api/v1/payment/${user_id}/${payment_id}`,
           headers: {
             authorization: data.token,
           },

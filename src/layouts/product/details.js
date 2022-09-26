@@ -98,7 +98,7 @@ const Details = ({ products }) => {
                   <div className={styles.cardCheckout}>
                     <div className={styles.contentCheckout}>
                       <Image
-                        src={`${process.env.NEXT_PUBLIC_API_URL_IMAGE}/${results.cover}`}
+                        src={`https://app-coffee-shop.herokuapp.com/uploads/${results.cover}`}
                         width={50}
                         height={50}
                         alt="cover"

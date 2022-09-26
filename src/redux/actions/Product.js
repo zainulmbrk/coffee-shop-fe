@@ -26,7 +26,7 @@ export const GetProduct = () => {
     dispatch(GetProductRequest())
     axios({
       method: 'GET',
-      url: `${process.env.NEXT_PUBLIC_API_URL_BE}/api/v1/product`,
+      url: `https://app-coffee-shop.herokuapp.com/api/v1/product`,
     })
       .then((res) => {
         dispatch(GetProductSuccess(res.data.data))
@@ -62,7 +62,7 @@ export const GetProductByID = (movies_id) => {
     dispatch(GetProductByIDRequest())
     axios({
       method: 'GET',
-      url: `${process.env.NEXT_PUBLIC_API_URL}/product/${movies_id}`,
+      url: `https://app-coffee-shop.herokuapp.com/product/${movies_id}`,
     })
       .then((res) => {
         dispatch(GetProductByIDSuccess(res.data.data))

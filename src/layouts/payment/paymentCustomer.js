@@ -27,7 +27,7 @@ const PaymentCustomer = ({ paymentcart }) => {
     try {
       const res = await axios({
         method: 'POST',
-        url: `${process.env.NEXT_PUBLIC_API_URL_BE}/api/v1/payment`,
+        url: `https://app-coffee-shop.herokuapp.com/api/v1/payment`,
         // url: `http://localhost:1102/api/v1/payment`,
         data:
         {
@@ -83,7 +83,7 @@ const PaymentCustomer = ({ paymentcart }) => {
                 <div className={styles.itemDetails} id="listItems">
                   <div className={styles.item}>
                     <Image
-                      src={`${process.env.NEXT_PUBLIC_API_URL_IMAGE}/${results.cover}`}
+                      src={`https://app-coffee-shop.herokuapp.com/uploads/${results.cover}`}
                       width={150}
                       height={150}
                       alt="cover"

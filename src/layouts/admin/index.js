@@ -6,20 +6,20 @@ import { FaTrash } from 'react-icons/fa'
 import { useSelector } from 'react-redux'
 import Swal from 'sweetalert2'
 import { FaSort } from 'react-icons/fa'
-import $ from 'jquery'
+
 const Admin = ({ products }) => {
   const results = products
-  console.log(results, 'koi')
+
   const [refetch, setRefetch] = useState('')
 
   const { data } = useSelector((state) => state.login)
-  // console.log(data, 'cuks')
+
   const [formAddData, setFormAddData] = useState({})
   const [formEditData, setFormEditData] = useState('')
-  // console.log(formEditData, 'editnih')
+
   //add product
   const formData = new FormData()
-  // console.log(formData, 'add product')
+
   formData.append('cover', formAddData.cover || formEditData.cover)
   formData.append(
     'product_name',
@@ -40,7 +40,7 @@ const Admin = ({ products }) => {
     try {
       const results = await axios({
         method: 'POST',
-        url: `${process.env.NEXT_PUBLIC_API_URL_BE}/api/v1/product`,
+        url: `https://app-coffee-shop.herokuapp.com/api/v1/product`,
         data: formData,
         headers: {
           authorization: data.token,
@@ -81,7 +81,7 @@ const Admin = ({ products }) => {
       if (result.isConfirmed) {
         axios({
           method: 'DELETE',
-          url: `${process.env.NEXT_PUBLIC_API_URL_BE}/api/v1/product/${product_id}`,
+          url: `https://app-coffee-shop.herokuapp.com/api/v1/product/${product_id}`,
           headers: {
             authorization: data.token,
           },
@@ -104,7 +104,7 @@ const Admin = ({ products }) => {
     try {
       const results = await axios({
         method: 'PATCH',
-        url: `${process.env.NEXT_PUBLIC_API_URL_BE}/api/v1/product/${product_id}`,
+        url: `https://app-coffee-shop.herokuapp.com/api/v1/product/${product_id}`,
         data: formData,
         headers: {
           authorization: data.token,

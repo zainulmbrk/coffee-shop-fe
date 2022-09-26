@@ -45,7 +45,7 @@ export const GetCategory = () => {
     dispatch(GetCategoryRequest())
     axios({
       method: 'GET',
-      url: `${process.env.NEXT_PUBLIC_API_URL_BE}/api/v1/category`,
+      url: `https://app-coffee-shop.herokuapp.com/api/v1/category`,
     })
       .then((res) => {
         dispatch(GetCategorySuccess(res.data.data))

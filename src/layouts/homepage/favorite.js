@@ -33,7 +33,7 @@ const Favorite = () => {
                     <div className={styles.food1} key={index}>
                       <div className="img-preview">
                         <Image
-                          src={`${process.env.NEXT_PUBLIC_API_URL_IMAGE}/${item.cover}`}
+                          src={`https://app-coffee-shop.herokuapp.com/${item.cover}`}
                           width={100}
                           height={100}
                           alt="cover"
