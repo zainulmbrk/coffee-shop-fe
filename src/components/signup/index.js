@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { AuthRegister } from '../../redux/actions/Auth'
 import { useRouter } from 'next/router'
 import Footer from '../footer'
+import Head from 'next/head'
 const Register = () => {
   const { error, loading, isRegister } = useSelector((state) => state.register)
   const dispatch = useDispatch()
@@ -48,6 +49,9 @@ const Register = () => {
 
   return (
     <>
+      <Head>
+        <title>Coffee - Register</title>
+      </Head>
       <div className={styles.container}>
         <div className={styles.auth}>
           <div className={styles.leftSide}>

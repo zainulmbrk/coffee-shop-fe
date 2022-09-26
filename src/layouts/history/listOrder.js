@@ -14,7 +14,11 @@ const ListOrder = () => {
   const { data } = useSelector((state) => state.login)
   const [history, setHistory] = useState([])
   const [refetch, setRefetch] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [errors, setErrors] = useState([])
+
   useEffect(() => {
+    setLoading(true)
     const user_id = data.user_id
     axios({
       method: `GET`,
@@ -25,8 +29,10 @@ const ListOrder = () => {
       }
     }).then((res) => {
       setHistory(res.data)
+      setLoading(false)
     }).catch((err) => {
-      console.log(err)
+      setErrors(err.response.data.message)
+      setLoading(false)
     })
   }, [refetch])
 
@@ -45,7 +51,7 @@ const ListOrder = () => {
       if (result.isConfirmed) {
         axios({
           method: 'DELETE',
-          url: `http://localhost:1102/api/v1/payment/${user_id}/${payment_id}`,
+          url: `${process.env.NEXT_PUBLIC_API_URL_BE}/api/v1/payment/${user_id}/${payment_id}`,
           headers: {
             authorization: data.token,
           },
@@ -57,7 +63,7 @@ const ListOrder = () => {
   }
 
 
-  return (
+  return loading ? <div className={styles.loadingBar}><span className={styles.loader}></span></div> : (
     <>
       <div className={styles.rowHistory}>
         <div className='container'>

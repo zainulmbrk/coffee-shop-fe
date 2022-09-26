@@ -5,7 +5,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link rel="icon" href="logo/coffee.svg" alt="coffee" />
+          <link rel="icon" href="favicon.ico" alt="coffee" />
 
           <link
             href="https://fonts.cdnfonts.com/css/helvetica-neue-9"

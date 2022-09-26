@@ -27,7 +27,8 @@ const PaymentCustomer = ({ paymentcart }) => {
     try {
       const res = await axios({
         method: 'POST',
-        url: `https://app-coffee-shop.herokuapp.com/api/v1/payment`,
+        url: `${process.env.NEXT_PUBLIC_API_URL_BE}/api/v1/payment`,
+        // url: `http://localhost:1102/api/v1/payment`,
         data:
         {
           user_id: data.user_id,

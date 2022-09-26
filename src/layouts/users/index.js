@@ -1,7 +1,11 @@
 import Profile from "./profile"
-const ProfileUsers = () =>{
-    return(<>
-        <Profile/>
+import Head from "next/head"
+const ProfileUsers = () => {
+    return (<>
+        <Head>
+            <title>Coffee - Product</title>
+        </Head>
+        <Profile />
     </>)
 }
 

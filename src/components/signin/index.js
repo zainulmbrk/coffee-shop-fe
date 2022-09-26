@@ -11,6 +11,7 @@ import Link from 'next/link'
 import Footer from '../footer'
 import axios from 'axios'
 import Swal from 'sweetalert2'
+import Head from 'next/head'
 // import Cookie from 'js-cookie'
 
 // const Loading = () => {
@@ -51,6 +52,9 @@ const Login = () => {
 
   return (
     <>
+      <Head>
+        <title>Coffee - Login</title>
+      </Head>
       <div className={styles.container}>
         <div className={styles.auth}>
           <div className={styles.leftSide}>

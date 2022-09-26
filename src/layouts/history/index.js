@@ -1,8 +1,11 @@
 import ListOrder from "./listOrder"
-
-const Order = () =>{
-    return(<>
-        <ListOrder/>
+import Head from "next/head"
+const Order = () => {
+    return (<>
+        <Head>
+            <title>Coffee - History</title>
+        </Head>
+        <ListOrder />
     </>)
 }
 

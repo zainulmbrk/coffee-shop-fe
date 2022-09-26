@@ -9,6 +9,11 @@ import Link from 'next/link'
 import styles from './CatProduct.module.css'
 import Image from 'next/image'
 import { FaSort } from 'react-icons/fa'
+
+const Loading = () => {
+  return <div className={styles.loadingBar}><span className={styles.loader}></span></div>
+}
+
 const CatProduct = () => {
   const dispatch = useDispatch()
 
@@ -23,6 +28,7 @@ const CatProduct = () => {
       totalPage: 0,
       results: [],
     },
+    loading: false
   })
   console.log(listProduct, 'yoyoyo')
   const [search, setSearch] = useState('')
@@ -225,36 +231,39 @@ const CatProduct = () => {
                   </div>
                 </div>
                 <div className={styles.listProductPage}>
-                  {listProduct?.data?.results?.map((item) => {
-                    return (
-                      <>
-                        <Link href={`/product/${item.product_id}`}>
-                          <div key={item.product_id}>
-                            <div className={styles.cardProduct}>
-                              <div className="cover">
-                                <Image
-                                  alt="cover"
-                                  width={100}
-                                  height={100}
-                                  src={`${process.env.NEXT_PUBLIC_API_URL_IMAGE}/${item.cover}`}
-                                />
-                              </div>
-                              <div className={styles.name}>
-                                <p className={styles.nameProduct}>
-                                  {item.product_name}
-                                </p>
-                              </div>
-                              <div className={styles.price}>
-                                <p className={styles.priceProduct}>
-                                  {item.price}
-                                </p>
+                  {!listProduct?.data?.results.length ? <Loading /> : <>
+                    {listProduct?.data?.results?.map((item) => {
+                      return (
+                        <>
+                          <Link href={`/product/${item.product_id}`}>
+                            <div key={item.product_id}>
+                              <div className={styles.cardProduct}>
+                                <div className="cover">
+                                  <Image
+                                    alt="cover"
+                                    width={100}
+                                    height={100}
+                                    src={`${process.env.NEXT_PUBLIC_API_URL_IMAGE}/${item.cover}`}
+                                  />
+                                </div>
+                                <div className={styles.name}>
+                                  <p className={styles.nameProduct}>
+                                    {item.product_name}
+                                  </p>
+                                </div>
+                                <div className={styles.price}>
+                                  <p className={styles.priceProduct}>
+                                    {item.price}
+                                  </p>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        </Link>
-                      </>
-                    )
-                  })}
+                          </Link>
+                        </>
+                      )
+                    })}
+                  </>}
+
                 </div>
               </div>
             </div>

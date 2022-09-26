@@ -1,3 +1,35 @@
+.loadingBar{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    height: 600px;
+  }
+  .loader {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #6A4029;
+    box-shadow: 32px 0 #6A4029, -32px 0 #6A4029;
+    position: absolute;
+    animation: flash 0.5s ease-in-out infinite alternate;
+  }
+  
+  @keyframes flash {
+    0% {
+      background-color: #FFF2;
+      box-shadow: 32px 0 #FFF2, -32px 0 #6A4029;
+    }
+    50% {
+      background-color: #6A4029;
+      box-shadow: 32px 0 #FFF2, -32px 0 #FFF2;
+    }
+    100% {
+      background-color: #FFF2;
+      box-shadow: 32px 0 #6A4029, -32px 0 #FFF2;
+    }
+  }
+
 .rowHistory {
     margin-top: -1.3rem;
     width: 100%;

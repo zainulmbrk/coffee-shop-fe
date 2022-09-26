@@ -151,6 +151,39 @@
 
   /* right */
 
+  /* LOADING */
+
+  .loadingBar{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .loader {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #6A4029;
+    box-shadow: 32px 0 #6A4029, -32px 0 #6A4029;
+    position: absolute;
+    animation: flash 1.0s ease-in-out infinite alternate;
+  }
+  
+  @keyframes flash {
+    0% {
+      background-color: #FFF2;
+      box-shadow: 32px 0 #FFF2, -32px 0 #6A4029;
+    }
+    50% {
+      background-color: #6A4029;
+      box-shadow: 32px 0 #FFF2, -32px 0 #FFF2;
+    }
+    100% {
+      background-color: #FFF2;
+      box-shadow: 32px 0 #6A4029, -32px 0 #FFF2;
+    }
+  }
+        
+
 .rightContent{
     border-left: 1px solid lightgray;
     margin-top: 2rem;
