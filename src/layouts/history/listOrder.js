@@ -70,9 +70,9 @@ const ListOrder = () => {
           {!history?.data?.length ? <div className={styles.noOrder}>
             <Image src={fandb2} alt={fandb2} width={100} height={100} />
             <p>No orders</p>
-            <p className={styles.noOrderHistory}>You don't have any orders in your history</p>
+            <p className={styles.noOrderHistory}>You dont have any orders in your history</p>
           </div> : <div className={styles.orderHistory}>
-            <p>Let's see you have bought!</p>
+            <p>Lets see you have bought!</p>
           </div>}
 
           <div className={styles.wrapCard}>

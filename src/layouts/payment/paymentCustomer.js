@@ -174,7 +174,7 @@ const PaymentCustomer = ({ paymentcart }) => {
             </div></> : <><div className={styles.noCart}>
               <Image src={cart} alt={cart} width={100} height={100} />
               <p>No Cart Order</p>
-              <p className={styles.noCartHistory}>You don't have any cart</p>
+              <p className={styles.noCartHistory}>You dont have any cart</p>
             </div></>}
 
           </div>
