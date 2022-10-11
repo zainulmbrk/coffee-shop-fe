@@ -202,10 +202,10 @@
 
 .cardCheckout{
     background-color: #fff;
-    width: 30%;
+    /* width: 30%; */
     border-radius: 10px;
     display: flex;
-    column-gap: 10px;
+    column-gap: 20px;
     align-items: center;
     color: #000;
     padding: 1rem;
@@ -226,6 +226,16 @@
     text-transform: uppercase;
     margin: 0;
     padding: 0;
+}
+
+.actionItem{
+    background-color: rgb(245, 226, 151);
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: #000;
 }
 
 .btnCheckout button{

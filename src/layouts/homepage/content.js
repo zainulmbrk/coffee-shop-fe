@@ -40,7 +40,7 @@ const Content = () => {
                   </p>
                   <p>
                     <Image alt="ceklist" src={ceklist} /> Free member card with
-                    a minimum purchase of IDR 200.000.
+                    a minimum purchase of $ 200.000.
                   </p>
                 </div>
                 {/* <div className={styles.ceklist2}>

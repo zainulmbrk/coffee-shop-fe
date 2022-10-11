@@ -37,7 +37,7 @@ export const GetProduct = () => {
   }
 }
 
-const GetProductByIDRequest = () => {
+const GetProductBy$equest = () => {
   return {
     type: 'GET_PRODUCTBYID_REQUEST',
   }
@@ -59,7 +59,7 @@ const GetProductByIDError = (error) => {
 
 export const GetProductByID = (movies_id) => {
   return (dispatch) => {
-    dispatch(GetProductByIDRequest())
+    dispatch(GetProductBy$equest())
     axios({
       method: 'GET',
       url: `https://app-coffee-shop.herokuapp.com/product/${movies_id}`,

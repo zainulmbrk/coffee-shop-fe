@@ -232,7 +232,7 @@ const CatProduct = () => {
                 </div>
                 <div className={styles.listProductPage}>
                   {!listProduct?.data?.results.length ? <Loading /> : <>
-                    {listProduct?.data?.results?.map((item) => {
+                    {listProduct?.data?.results?.slice(0, 8).map((item) => {
                       return (
                         <>
                           <Link href={`/product/${item.product_id}`}>

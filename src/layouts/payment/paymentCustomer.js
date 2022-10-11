@@ -51,7 +51,8 @@ const PaymentCustomer = ({ paymentcart }) => {
           // width: '20em',
           height: '5em',
         })
-        setRefetch(!refetch)
+        router.push('/history')
+        // setRefetch(!refetch)
 
       }
     } catch (error) {
@@ -99,22 +100,22 @@ const PaymentCustomer = ({ paymentcart }) => {
                   <div className={styles.subtotal}>
                     <p>SUBTOTAL</p>
                     <p>
-                      IDR <span id="sub_total">{results.price}</span>{' '}
+                      $ <span id="sub_total">{results.price}</span>{' '}
                     </p>
                   </div>
                   {/* <div className={styles.tax}>
                     <p>TAX & FEES</p>
-                    <p>IDR 20.000</p>
+                    <p>$ 20.000</p>
                   </div>
                   <div className={styles.shipping}>
                     <p>SHIPPING</p>
-                    <p>IDR 10.000</p>
+                    <p>$ 10.000</p>
                   </div> */}
                 </div>
                 <div className={styles.total}>
                   <p>TOTAL </p>
                   <p>
-                    IDR <span id="total">{results.price}</span>{' '}
+                    $ <span id="total">{results.price}</span>{' '}
                   </p>
                 </div>
               </div>

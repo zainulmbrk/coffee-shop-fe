@@ -31,7 +31,7 @@ const ListOrder = () => {
       setHistory(res.data)
       setLoading(false)
     }).catch((err) => {
-      setErrors(err.response.data.message)
+      setErrors(err.response.data)
       setLoading(false)
     })
   }, [refetch])
@@ -85,7 +85,7 @@ const ListOrder = () => {
                     </div>
                     <div className={styles.infoOrder}>
                       <p className={styles.nameProduct}>{item.product_name}</p>
-                      <p>IDR {item.total_price}</p>
+                      <p>$ {item.total_price}</p>
                       <p>Delivered</p>
                     </div>
                     <div className={styles.actionDelete}>

@@ -125,10 +125,10 @@ const Admin = ({ products }) => {
       <div className="row">
         <div className="flex-column mt-5">
           <div className="d-flex justify-content-between header-action">
-            <div className="d-flex align-items-center gap-2 filter-action">
+            {/* <div className="d-flex align-items-center gap-2 filter-action">
               <input placeholder="search product name"></input>
               <FaSort />
-            </div>
+            </div> */}
             <div className="add-action">
               <button
                 type="button"
@@ -320,8 +320,9 @@ const Admin = ({ products }) => {
                     Close
                   </button>
                   <button
-                    type="button"
+                    type="submit"
                     className="btn btn-primary rounded"
+                    data-bs-dismiss="modal"
                     onClick={(event) => handleAddProduct(event)}
                   >
                     Save changes

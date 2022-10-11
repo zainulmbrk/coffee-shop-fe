@@ -1,16 +1,30 @@
+import { useRouter } from 'next/router'
+import { useSelector } from 'react-redux'
+import { useState } from 'react'
 import Image from 'next/image'
-import brew from '../../../assets/img/brew.png'
 import sizeR from '../../../assets/img/sizeR.png'
 import sizeL from '../../../assets/img/sizeL.png'
 import sizeXL from '../../../assets/img/sizeXL.png'
 import styles from '../../layouts/product/Details.module.css'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
-import { useSelector } from 'react-redux'
+import { FaPlus } from 'react-icons/fa'
+import { FaMinus } from 'react-icons/fa'
 const Details = ({ products }) => {
   const results = products.data[0]
   let router = useRouter()
   const { isLogin } = useSelector((state) => state.login)
+  const [count, setCount] = useState(1)
+
+  const decrement = () => {
+    setCount(prevCount => prevCount - 1)
+  }
+
+  const increment = () => {
+    setCount(prevCount => prevCount + 1)
+  }
+
+  let hasil = results.price * count
+
   return (
     <>
       <div className={styles.detailsRow}>
@@ -38,7 +52,7 @@ const Details = ({ products }) => {
                   <p className={styles.titleProductName}>
                     {results.product_name}
                   </p>
-                  <p className={styles.productPrice}>IDR {results.price}</p>
+                  <p className={styles.productPrice}>$ {results.price}</p>
                 </div>
                 <div className={styles.action}>
                   <button className={styles.cart}>Add to Cart</button>
@@ -104,7 +118,17 @@ const Details = ({ products }) => {
                         alt="cover"
                         style={{ borderRadius: '50px' }}
                       />
-                      <p>{results.product_name}</p>
+                      <div style={{ display: 'flex', flexDirection: 'column' }}>
+                        <p>{results.product_name}</p>
+                        <p style={{ fontSize: '0.9em', fontWeight: '500' }}>{results.price}<span style={{ textTransform: 'lowercase', margin: '0 2px' }}>x</span>{count}</p>
+                        <span style={{ fontWeight: '700' }}>${hasil}</span>
+                      </div>
+                    </div>
+                    <div style={{ display: 'flex', columnGap: '1em' }}>
+                      <FaMinus size={25} className={styles.actionItem} onClick={decrement} />
+                      <span style={{ margin: '0', padding: '0', fontWeight: '800' }}>{count}</span>
+                      <FaPlus size={25} className={styles.actionItem} onClick={increment} />
+
                     </div>
                   </div>
                   <div className={styles.btnCheckout}>
